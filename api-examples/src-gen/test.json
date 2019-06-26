@@ -1,0 +1,8 @@
+{
+	"steps": [
+		{
+			"type": "Class",
+			"classId": "http://schema.org/Person"
+		}
+	]
+}

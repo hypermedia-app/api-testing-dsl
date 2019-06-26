@@ -1,0 +1,13 @@
+grammar com.zazuko.apitesting.dsl.ApiTestingDsl with org.eclipse.xtext.common.Terminals
+
+generate apiTestingDsl "http://www.zazuko.com/apitesting/dsl/ApiTestingDsl"
+
+Model:
+    (elements+=Element)*;
+	
+Element:
+	ClassBlock;
+	
+ClassBlock:
+	'With' 'Class' name=STRING '{'
+	'}';

@@ -1,0 +1,5 @@
+bin
+test-bin
+*.xtendbin
+*.java._trace
+*.jar

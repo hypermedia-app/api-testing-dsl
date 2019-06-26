@@ -4,39 +4,28 @@
 package com.zazuko.apitesting.dsl.apiTestingDsl.impl;
 
 import com.zazuko.apitesting.dsl.apiTestingDsl.ApiTestingDslPackage;
-import com.zazuko.apitesting.dsl.apiTestingDsl.ClassBlock;
-import com.zazuko.apitesting.dsl.apiTestingDsl.ClassLevelAssertion;
-
-import java.util.Collection;
+import com.zazuko.apitesting.dsl.apiTestingDsl.PropertyAssertion;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Class Block</b></em>'.
+ * An implementation of the model object '<em><b>Property Assertion</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.zazuko.apitesting.dsl.apiTestingDsl.impl.ClassBlockImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.zazuko.apitesting.dsl.apiTestingDsl.impl.ClassBlockImpl#getAssertions <em>Assertions</em>}</li>
+ *   <li>{@link com.zazuko.apitesting.dsl.apiTestingDsl.impl.PropertyAssertionImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ClassBlockImpl extends ElementImpl implements ClassBlock
+public class PropertyAssertionImpl extends ClassLevelAssertionImpl implements PropertyAssertion
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -59,21 +48,11 @@ public class ClassBlockImpl extends ElementImpl implements ClassBlock
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getAssertions() <em>Assertions</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAssertions()
-   * @generated
-   * @ordered
-   */
-  protected EList<ClassLevelAssertion> assertions;
-
-  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ClassBlockImpl()
+  protected PropertyAssertionImpl()
   {
     super();
   }
@@ -86,7 +65,7 @@ public class ClassBlockImpl extends ElementImpl implements ClassBlock
   @Override
   protected EClass eStaticClass()
   {
-    return ApiTestingDslPackage.Literals.CLASS_BLOCK;
+    return ApiTestingDslPackage.Literals.PROPERTY_ASSERTION;
   }
 
   /**
@@ -111,38 +90,7 @@ public class ClassBlockImpl extends ElementImpl implements ClassBlock
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ApiTestingDslPackage.CLASS_BLOCK__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<ClassLevelAssertion> getAssertions()
-  {
-    if (assertions == null)
-    {
-      assertions = new EObjectContainmentEList<ClassLevelAssertion>(ClassLevelAssertion.class, this, ApiTestingDslPackage.CLASS_BLOCK__ASSERTIONS);
-    }
-    return assertions;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case ApiTestingDslPackage.CLASS_BLOCK__ASSERTIONS:
-        return ((InternalEList<?>)getAssertions()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+      eNotify(new ENotificationImpl(this, Notification.SET, ApiTestingDslPackage.PROPERTY_ASSERTION__NAME, oldName, name));
   }
 
   /**
@@ -155,10 +103,8 @@ public class ClassBlockImpl extends ElementImpl implements ClassBlock
   {
     switch (featureID)
     {
-      case ApiTestingDslPackage.CLASS_BLOCK__NAME:
+      case ApiTestingDslPackage.PROPERTY_ASSERTION__NAME:
         return getName();
-      case ApiTestingDslPackage.CLASS_BLOCK__ASSERTIONS:
-        return getAssertions();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -168,18 +114,13 @@ public class ClassBlockImpl extends ElementImpl implements ClassBlock
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case ApiTestingDslPackage.CLASS_BLOCK__NAME:
+      case ApiTestingDslPackage.PROPERTY_ASSERTION__NAME:
         setName((String)newValue);
-        return;
-      case ApiTestingDslPackage.CLASS_BLOCK__ASSERTIONS:
-        getAssertions().clear();
-        getAssertions().addAll((Collection<? extends ClassLevelAssertion>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -195,11 +136,8 @@ public class ClassBlockImpl extends ElementImpl implements ClassBlock
   {
     switch (featureID)
     {
-      case ApiTestingDslPackage.CLASS_BLOCK__NAME:
+      case ApiTestingDslPackage.PROPERTY_ASSERTION__NAME:
         setName(NAME_EDEFAULT);
-        return;
-      case ApiTestingDslPackage.CLASS_BLOCK__ASSERTIONS:
-        getAssertions().clear();
         return;
     }
     super.eUnset(featureID);
@@ -215,10 +153,8 @@ public class ClassBlockImpl extends ElementImpl implements ClassBlock
   {
     switch (featureID)
     {
-      case ApiTestingDslPackage.CLASS_BLOCK__NAME:
+      case ApiTestingDslPackage.PROPERTY_ASSERTION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case ApiTestingDslPackage.CLASS_BLOCK__ASSERTIONS:
-        return assertions != null && !assertions.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -240,4 +176,4 @@ public class ClassBlockImpl extends ElementImpl implements ClassBlock
     return result.toString();
   }
 
-} //ClassBlockImpl
+} //PropertyAssertionImpl

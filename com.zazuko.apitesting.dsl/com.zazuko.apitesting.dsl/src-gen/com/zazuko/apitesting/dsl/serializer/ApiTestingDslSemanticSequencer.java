@@ -7,6 +7,7 @@ import com.google.inject.Inject;
 import com.zazuko.apitesting.dsl.apiTestingDsl.ApiTestingDslPackage;
 import com.zazuko.apitesting.dsl.apiTestingDsl.ClassBlock;
 import com.zazuko.apitesting.dsl.apiTestingDsl.Model;
+import com.zazuko.apitesting.dsl.apiTestingDsl.PropertyAssertion;
 import com.zazuko.apitesting.dsl.services.ApiTestingDslGrammarAccess;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -39,6 +40,9 @@ public class ApiTestingDslSemanticSequencer extends AbstractDelegatingSemanticSe
 			case ApiTestingDslPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
 				return; 
+			case ApiTestingDslPackage.PROPERTY_ASSERTION:
+				sequence_PropertyAssertion(context, (PropertyAssertion) semanticObject); 
+				return; 
 			}
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
@@ -50,16 +54,10 @@ public class ApiTestingDslSemanticSequencer extends AbstractDelegatingSemanticSe
 	 *     ClassBlock returns ClassBlock
 	 *
 	 * Constraint:
-	 *     name=STRING
+	 *     (name=STRING assertions+=ClassLevelAssertion*)
 	 */
 	protected void sequence_ClassBlock(ISerializationContext context, ClassBlock semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ApiTestingDslPackage.Literals.CLASS_BLOCK__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ApiTestingDslPackage.Literals.CLASS_BLOCK__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getClassBlockAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -72,6 +70,25 @@ public class ApiTestingDslSemanticSequencer extends AbstractDelegatingSemanticSe
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ClassLevelAssertion returns PropertyAssertion
+	 *     PropertyAssertion returns PropertyAssertion
+	 *
+	 * Constraint:
+	 *     name=STRING
+	 */
+	protected void sequence_PropertyAssertion(ISerializationContext context, PropertyAssertion semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ApiTestingDslPackage.Literals.PROPERTY_ASSERTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ApiTestingDslPackage.Literals.PROPERTY_ASSERTION__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPropertyAssertionAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.finish();
 	}
 	
 	

@@ -95,6 +95,21 @@ public class ApiTestingDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ApiTestingDslPackage.CLASS_LEVEL_ASSERTION:
+      {
+        ClassLevelAssertion classLevelAssertion = (ClassLevelAssertion)theEObject;
+        T result = caseClassLevelAssertion(classLevelAssertion);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ApiTestingDslPackage.PROPERTY_ASSERTION:
+      {
+        PropertyAssertion propertyAssertion = (PropertyAssertion)theEObject;
+        T result = casePropertyAssertion(propertyAssertion);
+        if (result == null) result = caseClassLevelAssertion(propertyAssertion);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -143,6 +158,38 @@ public class ApiTestingDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseClassBlock(ClassBlock object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Class Level Assertion</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Class Level Assertion</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseClassLevelAssertion(ClassLevelAssertion object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Property Assertion</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Property Assertion</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePropertyAssertion(PropertyAssertion object)
   {
     return null;
   }

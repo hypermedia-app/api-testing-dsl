@@ -2,7 +2,17 @@
 	"steps": [
 		{
 			"type": "Class",
-			"classId": "http://schema.org/Person"
+			"classId": "http://schema.org/Person",
+			"children": [
+				{
+					"type": "Property",
+					"propertyId": "http://schema.org/age"
+				},
+				{
+					"type": "Property",
+					"propertyId": "http://schema.org/name"
+				}
+			]
 		}
 	]
 }

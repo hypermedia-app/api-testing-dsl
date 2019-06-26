@@ -51,6 +51,24 @@ public interface ApiTestingDslFactory extends EFactory
   ClassBlock createClassBlock();
 
   /**
+   * Returns a new object of class '<em>Class Level Assertion</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Class Level Assertion</em>'.
+   * @generated
+   */
+  ClassLevelAssertion createClassLevelAssertion();
+
+  /**
+   * Returns a new object of class '<em>Property Assertion</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Property Assertion</em>'.
+   * @generated
+   */
+  PropertyAssertion createPropertyAssertion();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

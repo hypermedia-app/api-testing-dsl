@@ -8,6 +8,8 @@ import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import com.zazuko.apitesting.dsl.apiTestingDsl.ClassBlock
+import com.zazuko.apitesting.dsl.apiTestingDsl.PropertyAssertion
+import com.zazuko.apitesting.dsl.apiTestingDsl.ClassLevelAssertion
 
 /**
  * Generates code from your model files on save.
@@ -41,8 +43,24 @@ class ApiTestingDslGenerator extends AbstractGenerator {
 	def step(ClassBlock it) '''
 		{
 			"type": "Class",
-			"classId": "«name»"
+			"classId": "«name»",
+			"children": [
+				«FOR assertion:assertions SEPARATOR ","»
+					«assertion.child»
+				«ENDFOR»
+			]
+		}
+	'''	
+	
+	def dispatch child(PropertyAssertion it) '''
+		{
+			"type": "Property",
+			"propertyId": "«name»"
 		}
 	'''
 
+	def dispatch child(ClassLevelAssertion it) '''
+		# TODO: implementation missing for child(«class.name»)
+	'''
+	
 }

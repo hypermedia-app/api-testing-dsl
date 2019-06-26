@@ -68,6 +68,8 @@ public class ApiTestingDslFactoryImpl extends EFactoryImpl implements ApiTesting
       case ApiTestingDslPackage.MODEL: return createModel();
       case ApiTestingDslPackage.ELEMENT: return createElement();
       case ApiTestingDslPackage.CLASS_BLOCK: return createClassBlock();
+      case ApiTestingDslPackage.CLASS_LEVEL_ASSERTION: return createClassLevelAssertion();
+      case ApiTestingDslPackage.PROPERTY_ASSERTION: return createPropertyAssertion();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -107,6 +109,30 @@ public class ApiTestingDslFactoryImpl extends EFactoryImpl implements ApiTesting
   {
     ClassBlockImpl classBlock = new ClassBlockImpl();
     return classBlock;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ClassLevelAssertion createClassLevelAssertion()
+  {
+    ClassLevelAssertionImpl classLevelAssertion = new ClassLevelAssertionImpl();
+    return classLevelAssertion;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PropertyAssertion createPropertyAssertion()
+  {
+    PropertyAssertionImpl propertyAssertion = new PropertyAssertionImpl();
+    return propertyAssertion;
   }
 
   /**

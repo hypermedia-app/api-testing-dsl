@@ -1,2 +1,4 @@
-With Class "http://schema.org/Person" {	
+With Class "http://schema.org/Person" {
+	Expect Property "http://schema.org/age"
+	Expect Property "http://schema.org/name"
 }

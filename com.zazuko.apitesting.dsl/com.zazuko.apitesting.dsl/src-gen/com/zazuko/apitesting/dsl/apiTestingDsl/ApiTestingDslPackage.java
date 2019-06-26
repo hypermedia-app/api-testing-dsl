@@ -124,13 +124,69 @@ public interface ApiTestingDslPackage extends EPackage
   int CLASS_BLOCK__NAME = ELEMENT_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Assertions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_BLOCK__ASSERTIONS = ELEMENT_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Class Block</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS_BLOCK_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
+  int CLASS_BLOCK_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link com.zazuko.apitesting.dsl.apiTestingDsl.impl.ClassLevelAssertionImpl <em>Class Level Assertion</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.zazuko.apitesting.dsl.apiTestingDsl.impl.ClassLevelAssertionImpl
+   * @see com.zazuko.apitesting.dsl.apiTestingDsl.impl.ApiTestingDslPackageImpl#getClassLevelAssertion()
+   * @generated
+   */
+  int CLASS_LEVEL_ASSERTION = 3;
+
+  /**
+   * The number of structural features of the '<em>Class Level Assertion</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_LEVEL_ASSERTION_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link com.zazuko.apitesting.dsl.apiTestingDsl.impl.PropertyAssertionImpl <em>Property Assertion</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.zazuko.apitesting.dsl.apiTestingDsl.impl.PropertyAssertionImpl
+   * @see com.zazuko.apitesting.dsl.apiTestingDsl.impl.ApiTestingDslPackageImpl#getPropertyAssertion()
+   * @generated
+   */
+  int PROPERTY_ASSERTION = 4;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROPERTY_ASSERTION__NAME = CLASS_LEVEL_ASSERTION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Property Assertion</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROPERTY_ASSERTION_FEATURE_COUNT = CLASS_LEVEL_ASSERTION_FEATURE_COUNT + 1;
 
 
   /**
@@ -184,6 +240,48 @@ public interface ApiTestingDslPackage extends EPackage
    * @generated
    */
   EAttribute getClassBlock_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.zazuko.apitesting.dsl.apiTestingDsl.ClassBlock#getAssertions <em>Assertions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Assertions</em>'.
+   * @see com.zazuko.apitesting.dsl.apiTestingDsl.ClassBlock#getAssertions()
+   * @see #getClassBlock()
+   * @generated
+   */
+  EReference getClassBlock_Assertions();
+
+  /**
+   * Returns the meta object for class '{@link com.zazuko.apitesting.dsl.apiTestingDsl.ClassLevelAssertion <em>Class Level Assertion</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Class Level Assertion</em>'.
+   * @see com.zazuko.apitesting.dsl.apiTestingDsl.ClassLevelAssertion
+   * @generated
+   */
+  EClass getClassLevelAssertion();
+
+  /**
+   * Returns the meta object for class '{@link com.zazuko.apitesting.dsl.apiTestingDsl.PropertyAssertion <em>Property Assertion</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Property Assertion</em>'.
+   * @see com.zazuko.apitesting.dsl.apiTestingDsl.PropertyAssertion
+   * @generated
+   */
+  EClass getPropertyAssertion();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.zazuko.apitesting.dsl.apiTestingDsl.PropertyAssertion#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.zazuko.apitesting.dsl.apiTestingDsl.PropertyAssertion#getName()
+   * @see #getPropertyAssertion()
+   * @generated
+   */
+  EAttribute getPropertyAssertion_Name();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -253,6 +351,42 @@ public interface ApiTestingDslPackage extends EPackage
      * @generated
      */
     EAttribute CLASS_BLOCK__NAME = eINSTANCE.getClassBlock_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Assertions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CLASS_BLOCK__ASSERTIONS = eINSTANCE.getClassBlock_Assertions();
+
+    /**
+     * The meta object literal for the '{@link com.zazuko.apitesting.dsl.apiTestingDsl.impl.ClassLevelAssertionImpl <em>Class Level Assertion</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.zazuko.apitesting.dsl.apiTestingDsl.impl.ClassLevelAssertionImpl
+     * @see com.zazuko.apitesting.dsl.apiTestingDsl.impl.ApiTestingDslPackageImpl#getClassLevelAssertion()
+     * @generated
+     */
+    EClass CLASS_LEVEL_ASSERTION = eINSTANCE.getClassLevelAssertion();
+
+    /**
+     * The meta object literal for the '{@link com.zazuko.apitesting.dsl.apiTestingDsl.impl.PropertyAssertionImpl <em>Property Assertion</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.zazuko.apitesting.dsl.apiTestingDsl.impl.PropertyAssertionImpl
+     * @see com.zazuko.apitesting.dsl.apiTestingDsl.impl.ApiTestingDslPackageImpl#getPropertyAssertion()
+     * @generated
+     */
+    EClass PROPERTY_ASSERTION = eINSTANCE.getPropertyAssertion();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROPERTY_ASSERTION__NAME = eINSTANCE.getPropertyAssertion_Name();
 
   }
 

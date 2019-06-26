@@ -55,14 +55,17 @@ public class ApiTestingDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cAssertionsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cAssertionsClassLevelAssertionParserRuleCall_4_0 = (RuleCall)cAssertionsAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//ClassBlock:
 		//	'With' 'Class' name=STRING '{'
+		//	assertions+=ClassLevelAssertion*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'With' 'Class' name=STRING '{' '}'
+		//'With' 'Class' name=STRING '{' assertions+=ClassLevelAssertion* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'With'
@@ -80,14 +83,60 @@ public class ApiTestingDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
+		//assertions+=ClassLevelAssertion*
+		public Assignment getAssertionsAssignment_4() { return cAssertionsAssignment_4; }
+		
+		//ClassLevelAssertion
+		public RuleCall getAssertionsClassLevelAssertionParserRuleCall_4_0() { return cAssertionsClassLevelAssertionParserRuleCall_4_0; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+	}
+	public class ClassLevelAssertionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.zazuko.apitesting.dsl.ApiTestingDsl.ClassLevelAssertion");
+		private final RuleCall cPropertyAssertionParserRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//ClassLevelAssertion:
+		//	PropertyAssertion;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//PropertyAssertion
+		public RuleCall getPropertyAssertionParserRuleCall() { return cPropertyAssertionParserRuleCall; }
+	}
+	public class PropertyAssertionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.zazuko.apitesting.dsl.ApiTestingDsl.PropertyAssertion");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cExpectKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cPropertyKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		
+		//PropertyAssertion:
+		//	'Expect' 'Property' name=STRING;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'Expect' 'Property' name=STRING
+		public Group getGroup() { return cGroup; }
+		
+		//'Expect'
+		public Keyword getExpectKeyword_0() { return cExpectKeyword_0; }
+		
+		//'Property'
+		public Keyword getPropertyKeyword_1() { return cPropertyKeyword_1; }
+		
+		//name=STRING
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
 	}
 	
 	
 	private final ModelElements pModel;
 	private final ElementElements pElement;
 	private final ClassBlockElements pClassBlock;
+	private final ClassLevelAssertionElements pClassLevelAssertion;
+	private final PropertyAssertionElements pPropertyAssertion;
 	
 	private final Grammar grammar;
 	
@@ -101,6 +150,8 @@ public class ApiTestingDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pModel = new ModelElements();
 		this.pElement = new ElementElements();
 		this.pClassBlock = new ClassBlockElements();
+		this.pClassLevelAssertion = new ClassLevelAssertionElements();
+		this.pPropertyAssertion = new PropertyAssertionElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -152,6 +203,7 @@ public class ApiTestingDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//ClassBlock:
 	//	'With' 'Class' name=STRING '{'
+	//	assertions+=ClassLevelAssertion*
 	//	'}';
 	public ClassBlockElements getClassBlockAccess() {
 		return pClassBlock;
@@ -159,6 +211,26 @@ public class ApiTestingDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getClassBlockRule() {
 		return getClassBlockAccess().getRule();
+	}
+	
+	//ClassLevelAssertion:
+	//	PropertyAssertion;
+	public ClassLevelAssertionElements getClassLevelAssertionAccess() {
+		return pClassLevelAssertion;
+	}
+	
+	public ParserRule getClassLevelAssertionRule() {
+		return getClassLevelAssertionAccess().getRule();
+	}
+	
+	//PropertyAssertion:
+	//	'Expect' 'Property' name=STRING;
+	public PropertyAssertionElements getPropertyAssertionAccess() {
+		return pPropertyAssertion;
+	}
+	
+	public ParserRule getPropertyAssertionRule() {
+		return getPropertyAssertionAccess().getRule();
 	}
 	
 	//terminal ID:

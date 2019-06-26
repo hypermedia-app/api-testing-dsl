@@ -5,6 +5,10 @@ package com.zazuko.apitesting.dsl.generator;
 
 import com.google.common.collect.Iterators;
 import com.zazuko.apitesting.dsl.apiTestingDsl.ClassBlock;
+import com.zazuko.apitesting.dsl.apiTestingDsl.ClassLevelAssertion;
+import com.zazuko.apitesting.dsl.apiTestingDsl.PropertyAssertion;
+import java.util.Arrays;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
@@ -72,10 +76,70 @@ public class ApiTestingDslGenerator extends AbstractGenerator {
     _builder.append("\"classId\": \"");
     String _name = it.getName();
     _builder.append(_name, "\t");
+    _builder.append("\",");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("\"children\": [");
+    _builder.newLine();
+    {
+      EList<ClassLevelAssertion> _assertions = it.getAssertions();
+      boolean _hasElements = false;
+      for(final ClassLevelAssertion assertion : _assertions) {
+        if (!_hasElements) {
+          _hasElements = true;
+        } else {
+          _builder.appendImmediate(",", "\t\t");
+        }
+        _builder.append("\t\t");
+        CharSequence _child = this.child(assertion);
+        _builder.append(_child, "\t\t");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("\t");
+    _builder.append("]");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  protected CharSequence _child(final PropertyAssertion it) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"type\": \"Property\",");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"propertyId\": \"");
+    String _name = it.getName();
+    _builder.append(_name, "\t");
     _builder.append("\"");
     _builder.newLineIfNotEmpty();
     _builder.append("}");
     _builder.newLine();
     return _builder;
+  }
+  
+  protected CharSequence _child(final ClassLevelAssertion it) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("# TODO: implementation missing for child(");
+    String _name = it.getClass().getName();
+    _builder.append(_name);
+    _builder.append(")");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  public CharSequence child(final ClassLevelAssertion it) {
+    if (it instanceof PropertyAssertion) {
+      return _child((PropertyAssertion)it);
+    } else if (it != null) {
+      return _child(it);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(it).toString());
+    }
   }
 }

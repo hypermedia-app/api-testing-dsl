@@ -167,10 +167,99 @@ ruleClassBlock returns [EObject current=null]
 		{
 			newLeafNode(otherlv_3, grammarAccess.getClassBlockAccess().getLeftCurlyBracketKeyword_3());
 		}
-		otherlv_4='}'
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getClassBlockAccess().getAssertionsClassLevelAssertionParserRuleCall_4_0());
+				}
+				lv_assertions_4_0=ruleClassLevelAssertion
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getClassBlockRule());
+					}
+					add(
+						$current,
+						"assertions",
+						lv_assertions_4_0,
+						"com.zazuko.apitesting.dsl.ApiTestingDsl.ClassLevelAssertion");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_5='}'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getClassBlockAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getClassBlockAccess().getRightCurlyBracketKeyword_5());
 		}
+	)
+;
+
+// Entry rule entryRuleClassLevelAssertion
+entryRuleClassLevelAssertion returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getClassLevelAssertionRule()); }
+	iv_ruleClassLevelAssertion=ruleClassLevelAssertion
+	{ $current=$iv_ruleClassLevelAssertion.current; }
+	EOF;
+
+// Rule ClassLevelAssertion
+ruleClassLevelAssertion returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	{
+		newCompositeNode(grammarAccess.getClassLevelAssertionAccess().getPropertyAssertionParserRuleCall());
+	}
+	this_PropertyAssertion_0=rulePropertyAssertion
+	{
+		$current = $this_PropertyAssertion_0.current;
+		afterParserOrEnumRuleCall();
+	}
+;
+
+// Entry rule entryRulePropertyAssertion
+entryRulePropertyAssertion returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPropertyAssertionRule()); }
+	iv_rulePropertyAssertion=rulePropertyAssertion
+	{ $current=$iv_rulePropertyAssertion.current; }
+	EOF;
+
+// Rule PropertyAssertion
+rulePropertyAssertion returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='Expect'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getPropertyAssertionAccess().getExpectKeyword_0());
+		}
+		otherlv_1='Property'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getPropertyAssertionAccess().getPropertyKeyword_1());
+		}
+		(
+			(
+				lv_name_2_0=RULE_STRING
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getPropertyAssertionAccess().getNameSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getPropertyAssertionRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
 	)
 ;
 

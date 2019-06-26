@@ -10,4 +10,13 @@ Element:
 	
 ClassBlock:
 	'With' 'Class' name=STRING '{'
+		(assertions+=ClassLevelAssertion)*
 	'}';
+	
+ClassLevelAssertion:
+	PropertyAssertion
+;
+
+PropertyAssertion:
+	'Expect' 'Property' name=STRING
+;

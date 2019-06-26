@@ -115,8 +115,29 @@ public class ApiTestingDslGenerator extends AbstractGenerator {
     _builder.append("\"propertyId\": \"");
     String _name = it.getName();
     _builder.append(_name, "\t");
-    _builder.append("\"");
+    _builder.append("\",");
     _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("\"children\": [");
+    _builder.newLine();
+    {
+      EList<ClassLevelAssertion> _assertions = it.getAssertions();
+      boolean _hasElements = false;
+      for(final ClassLevelAssertion assertion : _assertions) {
+        if (!_hasElements) {
+          _hasElements = true;
+        } else {
+          _builder.appendImmediate(",", "\t\t");
+        }
+        _builder.append("\t\t");
+        CharSequence _child = this.child(assertion);
+        _builder.append(_child, "\t\t");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("\t");
+    _builder.append("]");
+    _builder.newLine();
     _builder.append("}");
     _builder.newLine();
     return _builder;

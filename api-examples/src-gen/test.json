@@ -6,11 +6,21 @@
 			"children": [
 				{
 					"type": "Property",
-					"propertyId": "http://schema.org/age"
+					"propertyId": "http://schema.org/name",
+					"children": [
+					]
 				},
 				{
 					"type": "Property",
-					"propertyId": "http://schema.org/name"
+					"propertyId": "knows",
+					"children": [
+						{
+							"type": "Property",
+							"propertyId": "name",
+							"children": [
+							]
+						}
+					]
 				}
 			]
 		}

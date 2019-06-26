@@ -16,9 +16,7 @@ import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
-import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 
 @SuppressWarnings("all")
 public class ApiTestingDslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -79,16 +77,10 @@ public class ApiTestingDslSemanticSequencer extends AbstractDelegatingSemanticSe
 	 *     PropertyAssertion returns PropertyAssertion
 	 *
 	 * Constraint:
-	 *     name=STRING
+	 *     (name=STRING assertions+=ClassLevelAssertion*)
 	 */
 	protected void sequence_PropertyAssertion(ISerializationContext context, PropertyAssertion semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ApiTestingDslPackage.Literals.PROPERTY_ASSERTION__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ApiTestingDslPackage.Literals.PROPERTY_ASSERTION__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPropertyAssertionAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

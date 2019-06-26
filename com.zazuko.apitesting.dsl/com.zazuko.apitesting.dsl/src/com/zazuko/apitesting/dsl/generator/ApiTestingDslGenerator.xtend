@@ -52,10 +52,15 @@ class ApiTestingDslGenerator extends AbstractGenerator {
 		}
 	'''	
 	
-	def dispatch child(PropertyAssertion it) '''
+	def dispatch CharSequence child(PropertyAssertion it)  '''
 		{
 			"type": "Property",
-			"propertyId": "«name»"
+			"propertyId": "«name»",
+			"children": [
+				«FOR assertion:assertions SEPARATOR ","»
+					«assertion.child»
+				«ENDFOR»
+			]
 		}
 	'''
 

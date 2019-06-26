@@ -4,13 +4,23 @@
 package com.zazuko.apitesting.dsl.apiTestingDsl.impl;
 
 import com.zazuko.apitesting.dsl.apiTestingDsl.ApiTestingDslPackage;
+import com.zazuko.apitesting.dsl.apiTestingDsl.ClassLevelAssertion;
 import com.zazuko.apitesting.dsl.apiTestingDsl.PropertyAssertion;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,6 +31,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link com.zazuko.apitesting.dsl.apiTestingDsl.impl.PropertyAssertionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.zazuko.apitesting.dsl.apiTestingDsl.impl.PropertyAssertionImpl#getAssertions <em>Assertions</em>}</li>
  * </ul>
  *
  * @generated
@@ -46,6 +57,16 @@ public class PropertyAssertionImpl extends ClassLevelAssertionImpl implements Pr
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getAssertions() <em>Assertions</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAssertions()
+   * @generated
+   * @ordered
+   */
+  protected EList<ClassLevelAssertion> assertions;
 
   /**
    * <!-- begin-user-doc -->
@@ -99,12 +120,45 @@ public class PropertyAssertionImpl extends ClassLevelAssertionImpl implements Pr
    * @generated
    */
   @Override
+  public EList<ClassLevelAssertion> getAssertions()
+  {
+    if (assertions == null)
+    {
+      assertions = new EObjectContainmentEList<ClassLevelAssertion>(ClassLevelAssertion.class, this, ApiTestingDslPackage.PROPERTY_ASSERTION__ASSERTIONS);
+    }
+    return assertions;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case ApiTestingDslPackage.PROPERTY_ASSERTION__ASSERTIONS:
+        return ((InternalEList<?>)getAssertions()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
       case ApiTestingDslPackage.PROPERTY_ASSERTION__NAME:
         return getName();
+      case ApiTestingDslPackage.PROPERTY_ASSERTION__ASSERTIONS:
+        return getAssertions();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -114,6 +168,7 @@ public class PropertyAssertionImpl extends ClassLevelAssertionImpl implements Pr
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -121,6 +176,10 @@ public class PropertyAssertionImpl extends ClassLevelAssertionImpl implements Pr
     {
       case ApiTestingDslPackage.PROPERTY_ASSERTION__NAME:
         setName((String)newValue);
+        return;
+      case ApiTestingDslPackage.PROPERTY_ASSERTION__ASSERTIONS:
+        getAssertions().clear();
+        getAssertions().addAll((Collection<? extends ClassLevelAssertion>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -139,6 +198,9 @@ public class PropertyAssertionImpl extends ClassLevelAssertionImpl implements Pr
       case ApiTestingDslPackage.PROPERTY_ASSERTION__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case ApiTestingDslPackage.PROPERTY_ASSERTION__ASSERTIONS:
+        getAssertions().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -155,6 +217,8 @@ public class PropertyAssertionImpl extends ClassLevelAssertionImpl implements Pr
     {
       case ApiTestingDslPackage.PROPERTY_ASSERTION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case ApiTestingDslPackage.PROPERTY_ASSERTION__ASSERTIONS:
+        return assertions != null && !assertions.isEmpty();
     }
     return super.eIsSet(featureID);
   }

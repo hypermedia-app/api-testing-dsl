@@ -121,6 +121,31 @@ ruleElement returns [EObject current=null]
 	}
 ;
 
+// Entry rule entryRuleClassLevelAssertion
+entryRuleClassLevelAssertion returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getClassLevelAssertionRule()); }
+	iv_ruleClassLevelAssertion=ruleClassLevelAssertion
+	{ $current=$iv_ruleClassLevelAssertion.current; }
+	EOF;
+
+// Rule ClassLevelAssertion
+ruleClassLevelAssertion returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	{
+		newCompositeNode(grammarAccess.getClassLevelAssertionAccess().getPropertyAssertionParserRuleCall());
+	}
+	this_PropertyAssertion_0=rulePropertyAssertion
+	{
+		$current = $this_PropertyAssertion_0.current;
+		afterParserOrEnumRuleCall();
+	}
+;
+
 // Entry rule entryRuleClassBlock
 entryRuleClassBlock returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getClassBlockRule()); }
@@ -193,31 +218,6 @@ ruleClassBlock returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleClassLevelAssertion
-entryRuleClassLevelAssertion returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getClassLevelAssertionRule()); }
-	iv_ruleClassLevelAssertion=ruleClassLevelAssertion
-	{ $current=$iv_ruleClassLevelAssertion.current; }
-	EOF;
-
-// Rule ClassLevelAssertion
-ruleClassLevelAssertion returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	{
-		newCompositeNode(grammarAccess.getClassLevelAssertionAccess().getPropertyAssertionParserRuleCall());
-	}
-	this_PropertyAssertion_0=rulePropertyAssertion
-	{
-		$current = $this_PropertyAssertion_0.current;
-		afterParserOrEnumRuleCall();
-	}
-;
-
 // Entry rule entryRulePropertyAssertion
 entryRulePropertyAssertion returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getPropertyAssertionRule()); }
@@ -260,6 +260,35 @@ rulePropertyAssertion returns [EObject current=null]
 				}
 			)
 		)
+		(
+			otherlv_3='{'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getPropertyAssertionAccess().getLeftCurlyBracketKeyword_3_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getPropertyAssertionAccess().getAssertionsClassLevelAssertionParserRuleCall_3_1_0());
+					}
+					lv_assertions_4_0=ruleClassLevelAssertion
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getPropertyAssertionRule());
+						}
+						add(
+							$current,
+							"assertions",
+							lv_assertions_4_0,
+							"com.zazuko.apitesting.dsl.ApiTestingDsl.ClassLevelAssertion");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)*
+			otherlv_5='}'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getPropertyAssertionAccess().getRightCurlyBracketKeyword_3_2());
+			}
+		)?
 	)
 ;
 

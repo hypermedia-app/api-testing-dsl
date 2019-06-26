@@ -3,6 +3,7 @@
  */
 package com.zazuko.apitesting.dsl.apiTestingDsl;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +15,7 @@ package com.zazuko.apitesting.dsl.apiTestingDsl;
  * </p>
  * <ul>
  *   <li>{@link com.zazuko.apitesting.dsl.apiTestingDsl.PropertyAssertion#getName <em>Name</em>}</li>
+ *   <li>{@link com.zazuko.apitesting.dsl.apiTestingDsl.PropertyAssertion#getAssertions <em>Assertions</em>}</li>
  * </ul>
  *
  * @see com.zazuko.apitesting.dsl.apiTestingDsl.ApiTestingDslPackage#getPropertyAssertion()
@@ -43,5 +45,17 @@ public interface PropertyAssertion extends ClassLevelAssertion
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Assertions</b></em>' containment reference list.
+   * The list contents are of type {@link com.zazuko.apitesting.dsl.apiTestingDsl.ClassLevelAssertion}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Assertions</em>' containment reference list.
+   * @see com.zazuko.apitesting.dsl.apiTestingDsl.ApiTestingDslPackage#getPropertyAssertion_Assertions()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ClassLevelAssertion> getAssertions();
 
 } // PropertyAssertion

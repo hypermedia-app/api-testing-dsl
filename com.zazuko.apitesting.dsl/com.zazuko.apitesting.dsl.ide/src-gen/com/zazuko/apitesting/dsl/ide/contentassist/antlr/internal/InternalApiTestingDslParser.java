@@ -240,12 +240,83 @@ public class InternalApiTestingDslParser extends AbstractInternalContentAssistPa
     // $ANTLR end "ruleElement"
 
 
+    // $ANTLR start "entryRuleClassLevelAssertion"
+    // InternalApiTestingDsl.g:103:1: entryRuleClassLevelAssertion : ruleClassLevelAssertion EOF ;
+    public final void entryRuleClassLevelAssertion() throws RecognitionException {
+        try {
+            // InternalApiTestingDsl.g:104:1: ( ruleClassLevelAssertion EOF )
+            // InternalApiTestingDsl.g:105:1: ruleClassLevelAssertion EOF
+            {
+             before(grammarAccess.getClassLevelAssertionRule()); 
+            pushFollow(FOLLOW_1);
+            ruleClassLevelAssertion();
+
+            state._fsp--;
+
+             after(grammarAccess.getClassLevelAssertionRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleClassLevelAssertion"
+
+
+    // $ANTLR start "ruleClassLevelAssertion"
+    // InternalApiTestingDsl.g:112:1: ruleClassLevelAssertion : ( rulePropertyAssertion ) ;
+    public final void ruleClassLevelAssertion() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalApiTestingDsl.g:116:2: ( ( rulePropertyAssertion ) )
+            // InternalApiTestingDsl.g:117:2: ( rulePropertyAssertion )
+            {
+            // InternalApiTestingDsl.g:117:2: ( rulePropertyAssertion )
+            // InternalApiTestingDsl.g:118:3: rulePropertyAssertion
+            {
+             before(grammarAccess.getClassLevelAssertionAccess().getPropertyAssertionParserRuleCall()); 
+            pushFollow(FOLLOW_2);
+            rulePropertyAssertion();
+
+            state._fsp--;
+
+             after(grammarAccess.getClassLevelAssertionAccess().getPropertyAssertionParserRuleCall()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleClassLevelAssertion"
+
+
     // $ANTLR start "entryRuleClassBlock"
-    // InternalApiTestingDsl.g:103:1: entryRuleClassBlock : ruleClassBlock EOF ;
+    // InternalApiTestingDsl.g:128:1: entryRuleClassBlock : ruleClassBlock EOF ;
     public final void entryRuleClassBlock() throws RecognitionException {
         try {
-            // InternalApiTestingDsl.g:104:1: ( ruleClassBlock EOF )
-            // InternalApiTestingDsl.g:105:1: ruleClassBlock EOF
+            // InternalApiTestingDsl.g:129:1: ( ruleClassBlock EOF )
+            // InternalApiTestingDsl.g:130:1: ruleClassBlock EOF
             {
              before(grammarAccess.getClassBlockRule()); 
             pushFollow(FOLLOW_1);
@@ -271,21 +342,21 @@ public class InternalApiTestingDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "ruleClassBlock"
-    // InternalApiTestingDsl.g:112:1: ruleClassBlock : ( ( rule__ClassBlock__Group__0 ) ) ;
+    // InternalApiTestingDsl.g:137:1: ruleClassBlock : ( ( rule__ClassBlock__Group__0 ) ) ;
     public final void ruleClassBlock() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalApiTestingDsl.g:116:2: ( ( ( rule__ClassBlock__Group__0 ) ) )
-            // InternalApiTestingDsl.g:117:2: ( ( rule__ClassBlock__Group__0 ) )
+            // InternalApiTestingDsl.g:141:2: ( ( ( rule__ClassBlock__Group__0 ) ) )
+            // InternalApiTestingDsl.g:142:2: ( ( rule__ClassBlock__Group__0 ) )
             {
-            // InternalApiTestingDsl.g:117:2: ( ( rule__ClassBlock__Group__0 ) )
-            // InternalApiTestingDsl.g:118:3: ( rule__ClassBlock__Group__0 )
+            // InternalApiTestingDsl.g:142:2: ( ( rule__ClassBlock__Group__0 ) )
+            // InternalApiTestingDsl.g:143:3: ( rule__ClassBlock__Group__0 )
             {
              before(grammarAccess.getClassBlockAccess().getGroup()); 
-            // InternalApiTestingDsl.g:119:3: ( rule__ClassBlock__Group__0 )
-            // InternalApiTestingDsl.g:119:4: rule__ClassBlock__Group__0
+            // InternalApiTestingDsl.g:144:3: ( rule__ClassBlock__Group__0 )
+            // InternalApiTestingDsl.g:144:4: rule__ClassBlock__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__ClassBlock__Group__0();
@@ -315,77 +386,6 @@ public class InternalApiTestingDslParser extends AbstractInternalContentAssistPa
         return ;
     }
     // $ANTLR end "ruleClassBlock"
-
-
-    // $ANTLR start "entryRuleClassLevelAssertion"
-    // InternalApiTestingDsl.g:128:1: entryRuleClassLevelAssertion : ruleClassLevelAssertion EOF ;
-    public final void entryRuleClassLevelAssertion() throws RecognitionException {
-        try {
-            // InternalApiTestingDsl.g:129:1: ( ruleClassLevelAssertion EOF )
-            // InternalApiTestingDsl.g:130:1: ruleClassLevelAssertion EOF
-            {
-             before(grammarAccess.getClassLevelAssertionRule()); 
-            pushFollow(FOLLOW_1);
-            ruleClassLevelAssertion();
-
-            state._fsp--;
-
-             after(grammarAccess.getClassLevelAssertionRule()); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleClassLevelAssertion"
-
-
-    // $ANTLR start "ruleClassLevelAssertion"
-    // InternalApiTestingDsl.g:137:1: ruleClassLevelAssertion : ( rulePropertyAssertion ) ;
-    public final void ruleClassLevelAssertion() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalApiTestingDsl.g:141:2: ( ( rulePropertyAssertion ) )
-            // InternalApiTestingDsl.g:142:2: ( rulePropertyAssertion )
-            {
-            // InternalApiTestingDsl.g:142:2: ( rulePropertyAssertion )
-            // InternalApiTestingDsl.g:143:3: rulePropertyAssertion
-            {
-             before(grammarAccess.getClassLevelAssertionAccess().getPropertyAssertionParserRuleCall()); 
-            pushFollow(FOLLOW_2);
-            rulePropertyAssertion();
-
-            state._fsp--;
-
-             after(grammarAccess.getClassLevelAssertionAccess().getPropertyAssertionParserRuleCall()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleClassLevelAssertion"
 
 
     // $ANTLR start "entryRulePropertyAssertion"
@@ -1099,17 +1099,22 @@ public class InternalApiTestingDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__PropertyAssertion__Group__2"
-    // InternalApiTestingDsl.g:393:1: rule__PropertyAssertion__Group__2 : rule__PropertyAssertion__Group__2__Impl ;
+    // InternalApiTestingDsl.g:393:1: rule__PropertyAssertion__Group__2 : rule__PropertyAssertion__Group__2__Impl rule__PropertyAssertion__Group__3 ;
     public final void rule__PropertyAssertion__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalApiTestingDsl.g:397:1: ( rule__PropertyAssertion__Group__2__Impl )
-            // InternalApiTestingDsl.g:398:2: rule__PropertyAssertion__Group__2__Impl
+            // InternalApiTestingDsl.g:397:1: ( rule__PropertyAssertion__Group__2__Impl rule__PropertyAssertion__Group__3 )
+            // InternalApiTestingDsl.g:398:2: rule__PropertyAssertion__Group__2__Impl rule__PropertyAssertion__Group__3
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_6);
             rule__PropertyAssertion__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__PropertyAssertion__Group__3();
 
             state._fsp--;
 
@@ -1132,21 +1137,21 @@ public class InternalApiTestingDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__PropertyAssertion__Group__2__Impl"
-    // InternalApiTestingDsl.g:404:1: rule__PropertyAssertion__Group__2__Impl : ( ( rule__PropertyAssertion__NameAssignment_2 ) ) ;
+    // InternalApiTestingDsl.g:405:1: rule__PropertyAssertion__Group__2__Impl : ( ( rule__PropertyAssertion__NameAssignment_2 ) ) ;
     public final void rule__PropertyAssertion__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalApiTestingDsl.g:408:1: ( ( ( rule__PropertyAssertion__NameAssignment_2 ) ) )
-            // InternalApiTestingDsl.g:409:1: ( ( rule__PropertyAssertion__NameAssignment_2 ) )
+            // InternalApiTestingDsl.g:409:1: ( ( ( rule__PropertyAssertion__NameAssignment_2 ) ) )
+            // InternalApiTestingDsl.g:410:1: ( ( rule__PropertyAssertion__NameAssignment_2 ) )
             {
-            // InternalApiTestingDsl.g:409:1: ( ( rule__PropertyAssertion__NameAssignment_2 ) )
-            // InternalApiTestingDsl.g:410:2: ( rule__PropertyAssertion__NameAssignment_2 )
+            // InternalApiTestingDsl.g:410:1: ( ( rule__PropertyAssertion__NameAssignment_2 ) )
+            // InternalApiTestingDsl.g:411:2: ( rule__PropertyAssertion__NameAssignment_2 )
             {
              before(grammarAccess.getPropertyAssertionAccess().getNameAssignment_2()); 
-            // InternalApiTestingDsl.g:411:2: ( rule__PropertyAssertion__NameAssignment_2 )
-            // InternalApiTestingDsl.g:411:3: rule__PropertyAssertion__NameAssignment_2
+            // InternalApiTestingDsl.g:412:2: ( rule__PropertyAssertion__NameAssignment_2 )
+            // InternalApiTestingDsl.g:412:3: rule__PropertyAssertion__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__PropertyAssertion__NameAssignment_2();
@@ -1178,18 +1183,357 @@ public class InternalApiTestingDslParser extends AbstractInternalContentAssistPa
     // $ANTLR end "rule__PropertyAssertion__Group__2__Impl"
 
 
+    // $ANTLR start "rule__PropertyAssertion__Group__3"
+    // InternalApiTestingDsl.g:420:1: rule__PropertyAssertion__Group__3 : rule__PropertyAssertion__Group__3__Impl ;
+    public final void rule__PropertyAssertion__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalApiTestingDsl.g:424:1: ( rule__PropertyAssertion__Group__3__Impl )
+            // InternalApiTestingDsl.g:425:2: rule__PropertyAssertion__Group__3__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__PropertyAssertion__Group__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PropertyAssertion__Group__3"
+
+
+    // $ANTLR start "rule__PropertyAssertion__Group__3__Impl"
+    // InternalApiTestingDsl.g:431:1: rule__PropertyAssertion__Group__3__Impl : ( ( rule__PropertyAssertion__Group_3__0 )? ) ;
+    public final void rule__PropertyAssertion__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalApiTestingDsl.g:435:1: ( ( ( rule__PropertyAssertion__Group_3__0 )? ) )
+            // InternalApiTestingDsl.g:436:1: ( ( rule__PropertyAssertion__Group_3__0 )? )
+            {
+            // InternalApiTestingDsl.g:436:1: ( ( rule__PropertyAssertion__Group_3__0 )? )
+            // InternalApiTestingDsl.g:437:2: ( rule__PropertyAssertion__Group_3__0 )?
+            {
+             before(grammarAccess.getPropertyAssertionAccess().getGroup_3()); 
+            // InternalApiTestingDsl.g:438:2: ( rule__PropertyAssertion__Group_3__0 )?
+            int alt3=2;
+            int LA3_0 = input.LA(1);
+
+            if ( (LA3_0==13) ) {
+                alt3=1;
+            }
+            switch (alt3) {
+                case 1 :
+                    // InternalApiTestingDsl.g:438:3: rule__PropertyAssertion__Group_3__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__PropertyAssertion__Group_3__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getPropertyAssertionAccess().getGroup_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PropertyAssertion__Group__3__Impl"
+
+
+    // $ANTLR start "rule__PropertyAssertion__Group_3__0"
+    // InternalApiTestingDsl.g:447:1: rule__PropertyAssertion__Group_3__0 : rule__PropertyAssertion__Group_3__0__Impl rule__PropertyAssertion__Group_3__1 ;
+    public final void rule__PropertyAssertion__Group_3__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalApiTestingDsl.g:451:1: ( rule__PropertyAssertion__Group_3__0__Impl rule__PropertyAssertion__Group_3__1 )
+            // InternalApiTestingDsl.g:452:2: rule__PropertyAssertion__Group_3__0__Impl rule__PropertyAssertion__Group_3__1
+            {
+            pushFollow(FOLLOW_7);
+            rule__PropertyAssertion__Group_3__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__PropertyAssertion__Group_3__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PropertyAssertion__Group_3__0"
+
+
+    // $ANTLR start "rule__PropertyAssertion__Group_3__0__Impl"
+    // InternalApiTestingDsl.g:459:1: rule__PropertyAssertion__Group_3__0__Impl : ( '{' ) ;
+    public final void rule__PropertyAssertion__Group_3__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalApiTestingDsl.g:463:1: ( ( '{' ) )
+            // InternalApiTestingDsl.g:464:1: ( '{' )
+            {
+            // InternalApiTestingDsl.g:464:1: ( '{' )
+            // InternalApiTestingDsl.g:465:2: '{'
+            {
+             before(grammarAccess.getPropertyAssertionAccess().getLeftCurlyBracketKeyword_3_0()); 
+            match(input,13,FOLLOW_2); 
+             after(grammarAccess.getPropertyAssertionAccess().getLeftCurlyBracketKeyword_3_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PropertyAssertion__Group_3__0__Impl"
+
+
+    // $ANTLR start "rule__PropertyAssertion__Group_3__1"
+    // InternalApiTestingDsl.g:474:1: rule__PropertyAssertion__Group_3__1 : rule__PropertyAssertion__Group_3__1__Impl rule__PropertyAssertion__Group_3__2 ;
+    public final void rule__PropertyAssertion__Group_3__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalApiTestingDsl.g:478:1: ( rule__PropertyAssertion__Group_3__1__Impl rule__PropertyAssertion__Group_3__2 )
+            // InternalApiTestingDsl.g:479:2: rule__PropertyAssertion__Group_3__1__Impl rule__PropertyAssertion__Group_3__2
+            {
+            pushFollow(FOLLOW_7);
+            rule__PropertyAssertion__Group_3__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__PropertyAssertion__Group_3__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PropertyAssertion__Group_3__1"
+
+
+    // $ANTLR start "rule__PropertyAssertion__Group_3__1__Impl"
+    // InternalApiTestingDsl.g:486:1: rule__PropertyAssertion__Group_3__1__Impl : ( ( rule__PropertyAssertion__AssertionsAssignment_3_1 )* ) ;
+    public final void rule__PropertyAssertion__Group_3__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalApiTestingDsl.g:490:1: ( ( ( rule__PropertyAssertion__AssertionsAssignment_3_1 )* ) )
+            // InternalApiTestingDsl.g:491:1: ( ( rule__PropertyAssertion__AssertionsAssignment_3_1 )* )
+            {
+            // InternalApiTestingDsl.g:491:1: ( ( rule__PropertyAssertion__AssertionsAssignment_3_1 )* )
+            // InternalApiTestingDsl.g:492:2: ( rule__PropertyAssertion__AssertionsAssignment_3_1 )*
+            {
+             before(grammarAccess.getPropertyAssertionAccess().getAssertionsAssignment_3_1()); 
+            // InternalApiTestingDsl.g:493:2: ( rule__PropertyAssertion__AssertionsAssignment_3_1 )*
+            loop4:
+            do {
+                int alt4=2;
+                int LA4_0 = input.LA(1);
+
+                if ( (LA4_0==15) ) {
+                    alt4=1;
+                }
+
+
+                switch (alt4) {
+            	case 1 :
+            	    // InternalApiTestingDsl.g:493:3: rule__PropertyAssertion__AssertionsAssignment_3_1
+            	    {
+            	    pushFollow(FOLLOW_8);
+            	    rule__PropertyAssertion__AssertionsAssignment_3_1();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop4;
+                }
+            } while (true);
+
+             after(grammarAccess.getPropertyAssertionAccess().getAssertionsAssignment_3_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PropertyAssertion__Group_3__1__Impl"
+
+
+    // $ANTLR start "rule__PropertyAssertion__Group_3__2"
+    // InternalApiTestingDsl.g:501:1: rule__PropertyAssertion__Group_3__2 : rule__PropertyAssertion__Group_3__2__Impl ;
+    public final void rule__PropertyAssertion__Group_3__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalApiTestingDsl.g:505:1: ( rule__PropertyAssertion__Group_3__2__Impl )
+            // InternalApiTestingDsl.g:506:2: rule__PropertyAssertion__Group_3__2__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__PropertyAssertion__Group_3__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PropertyAssertion__Group_3__2"
+
+
+    // $ANTLR start "rule__PropertyAssertion__Group_3__2__Impl"
+    // InternalApiTestingDsl.g:512:1: rule__PropertyAssertion__Group_3__2__Impl : ( '}' ) ;
+    public final void rule__PropertyAssertion__Group_3__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalApiTestingDsl.g:516:1: ( ( '}' ) )
+            // InternalApiTestingDsl.g:517:1: ( '}' )
+            {
+            // InternalApiTestingDsl.g:517:1: ( '}' )
+            // InternalApiTestingDsl.g:518:2: '}'
+            {
+             before(grammarAccess.getPropertyAssertionAccess().getRightCurlyBracketKeyword_3_2()); 
+            match(input,14,FOLLOW_2); 
+             after(grammarAccess.getPropertyAssertionAccess().getRightCurlyBracketKeyword_3_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PropertyAssertion__Group_3__2__Impl"
+
+
     // $ANTLR start "rule__Model__ElementsAssignment"
-    // InternalApiTestingDsl.g:420:1: rule__Model__ElementsAssignment : ( ruleElement ) ;
+    // InternalApiTestingDsl.g:528:1: rule__Model__ElementsAssignment : ( ruleElement ) ;
     public final void rule__Model__ElementsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalApiTestingDsl.g:424:1: ( ( ruleElement ) )
-            // InternalApiTestingDsl.g:425:2: ( ruleElement )
+            // InternalApiTestingDsl.g:532:1: ( ( ruleElement ) )
+            // InternalApiTestingDsl.g:533:2: ( ruleElement )
             {
-            // InternalApiTestingDsl.g:425:2: ( ruleElement )
-            // InternalApiTestingDsl.g:426:3: ruleElement
+            // InternalApiTestingDsl.g:533:2: ( ruleElement )
+            // InternalApiTestingDsl.g:534:3: ruleElement
             {
              before(grammarAccess.getModelAccess().getElementsElementParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -1220,17 +1564,17 @@ public class InternalApiTestingDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ClassBlock__NameAssignment_2"
-    // InternalApiTestingDsl.g:435:1: rule__ClassBlock__NameAssignment_2 : ( RULE_STRING ) ;
+    // InternalApiTestingDsl.g:543:1: rule__ClassBlock__NameAssignment_2 : ( RULE_STRING ) ;
     public final void rule__ClassBlock__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalApiTestingDsl.g:439:1: ( ( RULE_STRING ) )
-            // InternalApiTestingDsl.g:440:2: ( RULE_STRING )
+            // InternalApiTestingDsl.g:547:1: ( ( RULE_STRING ) )
+            // InternalApiTestingDsl.g:548:2: ( RULE_STRING )
             {
-            // InternalApiTestingDsl.g:440:2: ( RULE_STRING )
-            // InternalApiTestingDsl.g:441:3: RULE_STRING
+            // InternalApiTestingDsl.g:548:2: ( RULE_STRING )
+            // InternalApiTestingDsl.g:549:3: RULE_STRING
             {
              before(grammarAccess.getClassBlockAccess().getNameSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -1257,17 +1601,17 @@ public class InternalApiTestingDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ClassBlock__AssertionsAssignment_4"
-    // InternalApiTestingDsl.g:450:1: rule__ClassBlock__AssertionsAssignment_4 : ( ruleClassLevelAssertion ) ;
+    // InternalApiTestingDsl.g:558:1: rule__ClassBlock__AssertionsAssignment_4 : ( ruleClassLevelAssertion ) ;
     public final void rule__ClassBlock__AssertionsAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalApiTestingDsl.g:454:1: ( ( ruleClassLevelAssertion ) )
-            // InternalApiTestingDsl.g:455:2: ( ruleClassLevelAssertion )
+            // InternalApiTestingDsl.g:562:1: ( ( ruleClassLevelAssertion ) )
+            // InternalApiTestingDsl.g:563:2: ( ruleClassLevelAssertion )
             {
-            // InternalApiTestingDsl.g:455:2: ( ruleClassLevelAssertion )
-            // InternalApiTestingDsl.g:456:3: ruleClassLevelAssertion
+            // InternalApiTestingDsl.g:563:2: ( ruleClassLevelAssertion )
+            // InternalApiTestingDsl.g:564:3: ruleClassLevelAssertion
             {
              before(grammarAccess.getClassBlockAccess().getAssertionsClassLevelAssertionParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -1298,17 +1642,17 @@ public class InternalApiTestingDslParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__PropertyAssertion__NameAssignment_2"
-    // InternalApiTestingDsl.g:465:1: rule__PropertyAssertion__NameAssignment_2 : ( RULE_STRING ) ;
+    // InternalApiTestingDsl.g:573:1: rule__PropertyAssertion__NameAssignment_2 : ( RULE_STRING ) ;
     public final void rule__PropertyAssertion__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalApiTestingDsl.g:469:1: ( ( RULE_STRING ) )
-            // InternalApiTestingDsl.g:470:2: ( RULE_STRING )
+            // InternalApiTestingDsl.g:577:1: ( ( RULE_STRING ) )
+            // InternalApiTestingDsl.g:578:2: ( RULE_STRING )
             {
-            // InternalApiTestingDsl.g:470:2: ( RULE_STRING )
-            // InternalApiTestingDsl.g:471:3: RULE_STRING
+            // InternalApiTestingDsl.g:578:2: ( RULE_STRING )
+            // InternalApiTestingDsl.g:579:3: RULE_STRING
             {
              before(grammarAccess.getPropertyAssertionAccess().getNameSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -1332,6 +1676,47 @@ public class InternalApiTestingDslParser extends AbstractInternalContentAssistPa
         return ;
     }
     // $ANTLR end "rule__PropertyAssertion__NameAssignment_2"
+
+
+    // $ANTLR start "rule__PropertyAssertion__AssertionsAssignment_3_1"
+    // InternalApiTestingDsl.g:588:1: rule__PropertyAssertion__AssertionsAssignment_3_1 : ( ruleClassLevelAssertion ) ;
+    public final void rule__PropertyAssertion__AssertionsAssignment_3_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalApiTestingDsl.g:592:1: ( ( ruleClassLevelAssertion ) )
+            // InternalApiTestingDsl.g:593:2: ( ruleClassLevelAssertion )
+            {
+            // InternalApiTestingDsl.g:593:2: ( ruleClassLevelAssertion )
+            // InternalApiTestingDsl.g:594:3: ruleClassLevelAssertion
+            {
+             before(grammarAccess.getPropertyAssertionAccess().getAssertionsClassLevelAssertionParserRuleCall_3_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleClassLevelAssertion();
+
+            state._fsp--;
+
+             after(grammarAccess.getPropertyAssertionAccess().getAssertionsClassLevelAssertionParserRuleCall_3_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PropertyAssertion__AssertionsAssignment_3_1"
 
     // Delegated rules
 

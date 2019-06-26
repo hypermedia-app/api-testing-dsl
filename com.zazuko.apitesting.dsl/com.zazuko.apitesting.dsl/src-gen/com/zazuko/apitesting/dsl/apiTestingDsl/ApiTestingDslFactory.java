@@ -42,15 +42,6 @@ public interface ApiTestingDslFactory extends EFactory
   Element createElement();
 
   /**
-   * Returns a new object of class '<em>Class Block</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Class Block</em>'.
-   * @generated
-   */
-  ClassBlock createClassBlock();
-
-  /**
    * Returns a new object of class '<em>Class Level Assertion</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -58,6 +49,15 @@ public interface ApiTestingDslFactory extends EFactory
    * @generated
    */
   ClassLevelAssertion createClassLevelAssertion();
+
+  /**
+   * Returns a new object of class '<em>Class Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Class Block</em>'.
+   * @generated
+   */
+  ClassBlock createClassBlock();
 
   /**
    * Returns a new object of class '<em>Property Assertion</em>'.

@@ -278,8 +278,90 @@ public class InternalApiTestingDslParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleElement"
 
 
+    // $ANTLR start "entryRuleClassLevelAssertion"
+    // InternalApiTestingDsl.g:125:1: entryRuleClassLevelAssertion returns [EObject current=null] : iv_ruleClassLevelAssertion= ruleClassLevelAssertion EOF ;
+    public final EObject entryRuleClassLevelAssertion() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleClassLevelAssertion = null;
+
+
+        try {
+            // InternalApiTestingDsl.g:125:60: (iv_ruleClassLevelAssertion= ruleClassLevelAssertion EOF )
+            // InternalApiTestingDsl.g:126:2: iv_ruleClassLevelAssertion= ruleClassLevelAssertion EOF
+            {
+             newCompositeNode(grammarAccess.getClassLevelAssertionRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleClassLevelAssertion=ruleClassLevelAssertion();
+
+            state._fsp--;
+
+             current =iv_ruleClassLevelAssertion; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleClassLevelAssertion"
+
+
+    // $ANTLR start "ruleClassLevelAssertion"
+    // InternalApiTestingDsl.g:132:1: ruleClassLevelAssertion returns [EObject current=null] : this_PropertyAssertion_0= rulePropertyAssertion ;
+    public final EObject ruleClassLevelAssertion() throws RecognitionException {
+        EObject current = null;
+
+        EObject this_PropertyAssertion_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalApiTestingDsl.g:138:2: (this_PropertyAssertion_0= rulePropertyAssertion )
+            // InternalApiTestingDsl.g:139:2: this_PropertyAssertion_0= rulePropertyAssertion
+            {
+
+            		newCompositeNode(grammarAccess.getClassLevelAssertionAccess().getPropertyAssertionParserRuleCall());
+            	
+            pushFollow(FOLLOW_2);
+            this_PropertyAssertion_0=rulePropertyAssertion();
+
+            state._fsp--;
+
+
+            		current = this_PropertyAssertion_0;
+            		afterParserOrEnumRuleCall();
+            	
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleClassLevelAssertion"
+
+
     // $ANTLR start "entryRuleClassBlock"
-    // InternalApiTestingDsl.g:125:1: entryRuleClassBlock returns [EObject current=null] : iv_ruleClassBlock= ruleClassBlock EOF ;
+    // InternalApiTestingDsl.g:150:1: entryRuleClassBlock returns [EObject current=null] : iv_ruleClassBlock= ruleClassBlock EOF ;
     public final EObject entryRuleClassBlock() throws RecognitionException {
         EObject current = null;
 
@@ -287,8 +369,8 @@ public class InternalApiTestingDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalApiTestingDsl.g:125:51: (iv_ruleClassBlock= ruleClassBlock EOF )
-            // InternalApiTestingDsl.g:126:2: iv_ruleClassBlock= ruleClassBlock EOF
+            // InternalApiTestingDsl.g:150:51: (iv_ruleClassBlock= ruleClassBlock EOF )
+            // InternalApiTestingDsl.g:151:2: iv_ruleClassBlock= ruleClassBlock EOF
             {
              newCompositeNode(grammarAccess.getClassBlockRule()); 
             pushFollow(FOLLOW_1);
@@ -315,7 +397,7 @@ public class InternalApiTestingDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleClassBlock"
-    // InternalApiTestingDsl.g:132:1: ruleClassBlock returns [EObject current=null] : (otherlv_0= 'With' otherlv_1= 'Class' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= '{' ( (lv_assertions_4_0= ruleClassLevelAssertion ) )* otherlv_5= '}' ) ;
+    // InternalApiTestingDsl.g:157:1: ruleClassBlock returns [EObject current=null] : (otherlv_0= 'With' otherlv_1= 'Class' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= '{' ( (lv_assertions_4_0= ruleClassLevelAssertion ) )* otherlv_5= '}' ) ;
     public final EObject ruleClassBlock() throws RecognitionException {
         EObject current = null;
 
@@ -331,11 +413,11 @@ public class InternalApiTestingDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalApiTestingDsl.g:138:2: ( (otherlv_0= 'With' otherlv_1= 'Class' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= '{' ( (lv_assertions_4_0= ruleClassLevelAssertion ) )* otherlv_5= '}' ) )
-            // InternalApiTestingDsl.g:139:2: (otherlv_0= 'With' otherlv_1= 'Class' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= '{' ( (lv_assertions_4_0= ruleClassLevelAssertion ) )* otherlv_5= '}' )
+            // InternalApiTestingDsl.g:163:2: ( (otherlv_0= 'With' otherlv_1= 'Class' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= '{' ( (lv_assertions_4_0= ruleClassLevelAssertion ) )* otherlv_5= '}' ) )
+            // InternalApiTestingDsl.g:164:2: (otherlv_0= 'With' otherlv_1= 'Class' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= '{' ( (lv_assertions_4_0= ruleClassLevelAssertion ) )* otherlv_5= '}' )
             {
-            // InternalApiTestingDsl.g:139:2: (otherlv_0= 'With' otherlv_1= 'Class' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= '{' ( (lv_assertions_4_0= ruleClassLevelAssertion ) )* otherlv_5= '}' )
-            // InternalApiTestingDsl.g:140:3: otherlv_0= 'With' otherlv_1= 'Class' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= '{' ( (lv_assertions_4_0= ruleClassLevelAssertion ) )* otherlv_5= '}'
+            // InternalApiTestingDsl.g:164:2: (otherlv_0= 'With' otherlv_1= 'Class' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= '{' ( (lv_assertions_4_0= ruleClassLevelAssertion ) )* otherlv_5= '}' )
+            // InternalApiTestingDsl.g:165:3: otherlv_0= 'With' otherlv_1= 'Class' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= '{' ( (lv_assertions_4_0= ruleClassLevelAssertion ) )* otherlv_5= '}'
             {
             otherlv_0=(Token)match(input,11,FOLLOW_4); 
 
@@ -345,11 +427,11 @@ public class InternalApiTestingDslParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getClassBlockAccess().getClassKeyword_1());
             		
-            // InternalApiTestingDsl.g:148:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalApiTestingDsl.g:149:4: (lv_name_2_0= RULE_STRING )
+            // InternalApiTestingDsl.g:173:3: ( (lv_name_2_0= RULE_STRING ) )
+            // InternalApiTestingDsl.g:174:4: (lv_name_2_0= RULE_STRING )
             {
-            // InternalApiTestingDsl.g:149:4: (lv_name_2_0= RULE_STRING )
-            // InternalApiTestingDsl.g:150:5: lv_name_2_0= RULE_STRING
+            // InternalApiTestingDsl.g:174:4: (lv_name_2_0= RULE_STRING )
+            // InternalApiTestingDsl.g:175:5: lv_name_2_0= RULE_STRING
             {
             lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_6); 
 
@@ -375,7 +457,7 @@ public class InternalApiTestingDslParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getClassBlockAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalApiTestingDsl.g:170:3: ( (lv_assertions_4_0= ruleClassLevelAssertion ) )*
+            // InternalApiTestingDsl.g:195:3: ( (lv_assertions_4_0= ruleClassLevelAssertion ) )*
             loop2:
             do {
                 int alt2=2;
@@ -388,10 +470,10 @@ public class InternalApiTestingDslParser extends AbstractInternalAntlrParser {
 
                 switch (alt2) {
             	case 1 :
-            	    // InternalApiTestingDsl.g:171:4: (lv_assertions_4_0= ruleClassLevelAssertion )
+            	    // InternalApiTestingDsl.g:196:4: (lv_assertions_4_0= ruleClassLevelAssertion )
             	    {
-            	    // InternalApiTestingDsl.g:171:4: (lv_assertions_4_0= ruleClassLevelAssertion )
-            	    // InternalApiTestingDsl.g:172:5: lv_assertions_4_0= ruleClassLevelAssertion
+            	    // InternalApiTestingDsl.g:196:4: (lv_assertions_4_0= ruleClassLevelAssertion )
+            	    // InternalApiTestingDsl.g:197:5: lv_assertions_4_0= ruleClassLevelAssertion
             	    {
 
             	    					newCompositeNode(grammarAccess.getClassBlockAccess().getAssertionsClassLevelAssertionParserRuleCall_4_0());
@@ -450,88 +532,6 @@ public class InternalApiTestingDslParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleClassBlock"
 
 
-    // $ANTLR start "entryRuleClassLevelAssertion"
-    // InternalApiTestingDsl.g:197:1: entryRuleClassLevelAssertion returns [EObject current=null] : iv_ruleClassLevelAssertion= ruleClassLevelAssertion EOF ;
-    public final EObject entryRuleClassLevelAssertion() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleClassLevelAssertion = null;
-
-
-        try {
-            // InternalApiTestingDsl.g:197:60: (iv_ruleClassLevelAssertion= ruleClassLevelAssertion EOF )
-            // InternalApiTestingDsl.g:198:2: iv_ruleClassLevelAssertion= ruleClassLevelAssertion EOF
-            {
-             newCompositeNode(grammarAccess.getClassLevelAssertionRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleClassLevelAssertion=ruleClassLevelAssertion();
-
-            state._fsp--;
-
-             current =iv_ruleClassLevelAssertion; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleClassLevelAssertion"
-
-
-    // $ANTLR start "ruleClassLevelAssertion"
-    // InternalApiTestingDsl.g:204:1: ruleClassLevelAssertion returns [EObject current=null] : this_PropertyAssertion_0= rulePropertyAssertion ;
-    public final EObject ruleClassLevelAssertion() throws RecognitionException {
-        EObject current = null;
-
-        EObject this_PropertyAssertion_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalApiTestingDsl.g:210:2: (this_PropertyAssertion_0= rulePropertyAssertion )
-            // InternalApiTestingDsl.g:211:2: this_PropertyAssertion_0= rulePropertyAssertion
-            {
-
-            		newCompositeNode(grammarAccess.getClassLevelAssertionAccess().getPropertyAssertionParserRuleCall());
-            	
-            pushFollow(FOLLOW_2);
-            this_PropertyAssertion_0=rulePropertyAssertion();
-
-            state._fsp--;
-
-
-            		current = this_PropertyAssertion_0;
-            		afterParserOrEnumRuleCall();
-            	
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleClassLevelAssertion"
-
-
     // $ANTLR start "entryRulePropertyAssertion"
     // InternalApiTestingDsl.g:222:1: entryRulePropertyAssertion returns [EObject current=null] : iv_rulePropertyAssertion= rulePropertyAssertion EOF ;
     public final EObject entryRulePropertyAssertion() throws RecognitionException {
@@ -569,23 +569,27 @@ public class InternalApiTestingDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePropertyAssertion"
-    // InternalApiTestingDsl.g:229:1: rulePropertyAssertion returns [EObject current=null] : (otherlv_0= 'Expect' otherlv_1= 'Property' ( (lv_name_2_0= RULE_STRING ) ) ) ;
+    // InternalApiTestingDsl.g:229:1: rulePropertyAssertion returns [EObject current=null] : (otherlv_0= 'Expect' otherlv_1= 'Property' ( (lv_name_2_0= RULE_STRING ) ) (otherlv_3= '{' ( (lv_assertions_4_0= ruleClassLevelAssertion ) )* otherlv_5= '}' )? ) ;
     public final EObject rulePropertyAssertion() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
         Token lv_name_2_0=null;
+        Token otherlv_3=null;
+        Token otherlv_5=null;
+        EObject lv_assertions_4_0 = null;
+
 
 
         	enterRule();
 
         try {
-            // InternalApiTestingDsl.g:235:2: ( (otherlv_0= 'Expect' otherlv_1= 'Property' ( (lv_name_2_0= RULE_STRING ) ) ) )
-            // InternalApiTestingDsl.g:236:2: (otherlv_0= 'Expect' otherlv_1= 'Property' ( (lv_name_2_0= RULE_STRING ) ) )
+            // InternalApiTestingDsl.g:235:2: ( (otherlv_0= 'Expect' otherlv_1= 'Property' ( (lv_name_2_0= RULE_STRING ) ) (otherlv_3= '{' ( (lv_assertions_4_0= ruleClassLevelAssertion ) )* otherlv_5= '}' )? ) )
+            // InternalApiTestingDsl.g:236:2: (otherlv_0= 'Expect' otherlv_1= 'Property' ( (lv_name_2_0= RULE_STRING ) ) (otherlv_3= '{' ( (lv_assertions_4_0= ruleClassLevelAssertion ) )* otherlv_5= '}' )? )
             {
-            // InternalApiTestingDsl.g:236:2: (otherlv_0= 'Expect' otherlv_1= 'Property' ( (lv_name_2_0= RULE_STRING ) ) )
-            // InternalApiTestingDsl.g:237:3: otherlv_0= 'Expect' otherlv_1= 'Property' ( (lv_name_2_0= RULE_STRING ) )
+            // InternalApiTestingDsl.g:236:2: (otherlv_0= 'Expect' otherlv_1= 'Property' ( (lv_name_2_0= RULE_STRING ) ) (otherlv_3= '{' ( (lv_assertions_4_0= ruleClassLevelAssertion ) )* otherlv_5= '}' )? )
+            // InternalApiTestingDsl.g:237:3: otherlv_0= 'Expect' otherlv_1= 'Property' ( (lv_name_2_0= RULE_STRING ) ) (otherlv_3= '{' ( (lv_assertions_4_0= ruleClassLevelAssertion ) )* otherlv_5= '}' )?
             {
             otherlv_0=(Token)match(input,15,FOLLOW_8); 
 
@@ -601,7 +605,7 @@ public class InternalApiTestingDslParser extends AbstractInternalAntlrParser {
             // InternalApiTestingDsl.g:246:4: (lv_name_2_0= RULE_STRING )
             // InternalApiTestingDsl.g:247:5: lv_name_2_0= RULE_STRING
             {
-            lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
+            lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_9); 
 
             					newLeafNode(lv_name_2_0, grammarAccess.getPropertyAssertionAccess().getNameSTRINGTerminalRuleCall_2_0());
             				
@@ -618,6 +622,80 @@ public class InternalApiTestingDslParser extends AbstractInternalAntlrParser {
 
             }
 
+
+            }
+
+            // InternalApiTestingDsl.g:263:3: (otherlv_3= '{' ( (lv_assertions_4_0= ruleClassLevelAssertion ) )* otherlv_5= '}' )?
+            int alt4=2;
+            int LA4_0 = input.LA(1);
+
+            if ( (LA4_0==13) ) {
+                alt4=1;
+            }
+            switch (alt4) {
+                case 1 :
+                    // InternalApiTestingDsl.g:264:4: otherlv_3= '{' ( (lv_assertions_4_0= ruleClassLevelAssertion ) )* otherlv_5= '}'
+                    {
+                    otherlv_3=(Token)match(input,13,FOLLOW_7); 
+
+                    				newLeafNode(otherlv_3, grammarAccess.getPropertyAssertionAccess().getLeftCurlyBracketKeyword_3_0());
+                    			
+                    // InternalApiTestingDsl.g:268:4: ( (lv_assertions_4_0= ruleClassLevelAssertion ) )*
+                    loop3:
+                    do {
+                        int alt3=2;
+                        int LA3_0 = input.LA(1);
+
+                        if ( (LA3_0==15) ) {
+                            alt3=1;
+                        }
+
+
+                        switch (alt3) {
+                    	case 1 :
+                    	    // InternalApiTestingDsl.g:269:5: (lv_assertions_4_0= ruleClassLevelAssertion )
+                    	    {
+                    	    // InternalApiTestingDsl.g:269:5: (lv_assertions_4_0= ruleClassLevelAssertion )
+                    	    // InternalApiTestingDsl.g:270:6: lv_assertions_4_0= ruleClassLevelAssertion
+                    	    {
+
+                    	    						newCompositeNode(grammarAccess.getPropertyAssertionAccess().getAssertionsClassLevelAssertionParserRuleCall_3_1_0());
+                    	    					
+                    	    pushFollow(FOLLOW_7);
+                    	    lv_assertions_4_0=ruleClassLevelAssertion();
+
+                    	    state._fsp--;
+
+
+                    	    						if (current==null) {
+                    	    							current = createModelElementForParent(grammarAccess.getPropertyAssertionRule());
+                    	    						}
+                    	    						add(
+                    	    							current,
+                    	    							"assertions",
+                    	    							lv_assertions_4_0,
+                    	    							"com.zazuko.apitesting.dsl.ApiTestingDsl.ClassLevelAssertion");
+                    	    						afterParserOrEnumRuleCall();
+                    	    					
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop3;
+                        }
+                    } while (true);
+
+                    otherlv_5=(Token)match(input,14,FOLLOW_2); 
+
+                    				newLeafNode(otherlv_5, grammarAccess.getPropertyAssertionAccess().getRightCurlyBracketKeyword_3_2());
+                    			
+
+                    }
+                    break;
 
             }
 
@@ -655,5 +733,6 @@ public class InternalApiTestingDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x000000000000C000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000002002L});
 
 }

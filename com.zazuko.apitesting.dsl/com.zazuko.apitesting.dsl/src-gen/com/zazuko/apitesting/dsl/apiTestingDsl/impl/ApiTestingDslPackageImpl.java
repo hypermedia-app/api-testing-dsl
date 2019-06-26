@@ -45,14 +45,14 @@ public class ApiTestingDslPackageImpl extends EPackageImpl implements ApiTesting
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass classBlockEClass = null;
+  private EClass classLevelAssertionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass classLevelAssertionEClass = null;
+  private EClass classBlockEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -163,6 +163,17 @@ public class ApiTestingDslPackageImpl extends EPackageImpl implements ApiTesting
    * @generated
    */
   @Override
+  public EClass getClassLevelAssertion()
+  {
+    return classLevelAssertionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getClassBlock()
   {
     return classBlockEClass;
@@ -196,17 +207,6 @@ public class ApiTestingDslPackageImpl extends EPackageImpl implements ApiTesting
    * @generated
    */
   @Override
-  public EClass getClassLevelAssertion()
-  {
-    return classLevelAssertionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getPropertyAssertion()
   {
     return propertyAssertionEClass;
@@ -221,6 +221,17 @@ public class ApiTestingDslPackageImpl extends EPackageImpl implements ApiTesting
   public EAttribute getPropertyAssertion_Name()
   {
     return (EAttribute)propertyAssertionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPropertyAssertion_Assertions()
+  {
+    return (EReference)propertyAssertionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -259,14 +270,15 @@ public class ApiTestingDslPackageImpl extends EPackageImpl implements ApiTesting
 
     elementEClass = createEClass(ELEMENT);
 
+    classLevelAssertionEClass = createEClass(CLASS_LEVEL_ASSERTION);
+
     classBlockEClass = createEClass(CLASS_BLOCK);
     createEAttribute(classBlockEClass, CLASS_BLOCK__NAME);
     createEReference(classBlockEClass, CLASS_BLOCK__ASSERTIONS);
 
-    classLevelAssertionEClass = createEClass(CLASS_LEVEL_ASSERTION);
-
     propertyAssertionEClass = createEClass(PROPERTY_ASSERTION);
     createEAttribute(propertyAssertionEClass, PROPERTY_ASSERTION__NAME);
+    createEReference(propertyAssertionEClass, PROPERTY_ASSERTION__ASSERTIONS);
   }
 
   /**
@@ -307,14 +319,15 @@ public class ApiTestingDslPackageImpl extends EPackageImpl implements ApiTesting
 
     initEClass(elementEClass, Element.class, "Element", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+    initEClass(classLevelAssertionEClass, ClassLevelAssertion.class, "ClassLevelAssertion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(classBlockEClass, ClassBlock.class, "ClassBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getClassBlock_Name(), ecorePackage.getEString(), "name", null, 0, 1, ClassBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getClassBlock_Assertions(), this.getClassLevelAssertion(), null, "assertions", null, 0, -1, ClassBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(classLevelAssertionEClass, ClassLevelAssertion.class, "ClassLevelAssertion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
     initEClass(propertyAssertionEClass, PropertyAssertion.class, "PropertyAssertion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPropertyAssertion_Name(), ecorePackage.getEString(), "name", null, 0, 1, PropertyAssertion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPropertyAssertion_Assertions(), this.getClassLevelAssertion(), null, "assertions", null, 0, -1, PropertyAssertion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

@@ -33,10 +33,12 @@ public class ApiTestingDslParser extends AbstractContentAssistParser {
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, ApiTestingDslGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getClassBlockAccess().getGroup(), "rule__ClassBlock__Group__0");
 			builder.put(grammarAccess.getPropertyAssertionAccess().getGroup(), "rule__PropertyAssertion__Group__0");
+			builder.put(grammarAccess.getPropertyAssertionAccess().getGroup_3(), "rule__PropertyAssertion__Group_3__0");
 			builder.put(grammarAccess.getModelAccess().getElementsAssignment(), "rule__Model__ElementsAssignment");
 			builder.put(grammarAccess.getClassBlockAccess().getNameAssignment_2(), "rule__ClassBlock__NameAssignment_2");
 			builder.put(grammarAccess.getClassBlockAccess().getAssertionsAssignment_4(), "rule__ClassBlock__AssertionsAssignment_4");
 			builder.put(grammarAccess.getPropertyAssertionAccess().getNameAssignment_2(), "rule__PropertyAssertion__NameAssignment_2");
+			builder.put(grammarAccess.getPropertyAssertionAccess().getAssertionsAssignment_3_1(), "rule__PropertyAssertion__AssertionsAssignment_3_1");
 		}
 	}
 	

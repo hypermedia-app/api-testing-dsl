@@ -86,14 +86,14 @@ public class ApiTestingDslAdapterFactory extends AdapterFactoryImpl
         return createElementAdapter();
       }
       @Override
-      public Adapter caseClassBlock(ClassBlock object)
-      {
-        return createClassBlockAdapter();
-      }
-      @Override
       public Adapter caseClassLevelAssertion(ClassLevelAssertion object)
       {
         return createClassLevelAssertionAdapter();
+      }
+      @Override
+      public Adapter caseClassBlock(ClassBlock object)
+      {
+        return createClassBlockAdapter();
       }
       @Override
       public Adapter casePropertyAssertion(PropertyAssertion object)
@@ -153,21 +153,6 @@ public class ApiTestingDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.zazuko.apitesting.dsl.apiTestingDsl.ClassBlock <em>Class Block</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.zazuko.apitesting.dsl.apiTestingDsl.ClassBlock
-   * @generated
-   */
-  public Adapter createClassBlockAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link com.zazuko.apitesting.dsl.apiTestingDsl.ClassLevelAssertion <em>Class Level Assertion</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -178,6 +163,21 @@ public class ApiTestingDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createClassLevelAssertionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.zazuko.apitesting.dsl.apiTestingDsl.ClassBlock <em>Class Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.zazuko.apitesting.dsl.apiTestingDsl.ClassBlock
+   * @generated
+   */
+  public Adapter createClassBlockAdapter()
   {
     return null;
   }

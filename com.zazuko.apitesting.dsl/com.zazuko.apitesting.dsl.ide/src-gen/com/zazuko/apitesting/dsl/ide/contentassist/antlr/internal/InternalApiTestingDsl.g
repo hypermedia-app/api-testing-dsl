@@ -99,31 +99,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-// Entry rule entryRuleClassBlock
-entryRuleClassBlock
-:
-{ before(grammarAccess.getClassBlockRule()); }
-	 ruleClassBlock
-{ after(grammarAccess.getClassBlockRule()); } 
-	 EOF 
-;
-
-// Rule ClassBlock
-ruleClassBlock 
-	@init {
-		int stackSize = keepStackSize();
-	}
-	:
-	(
-		{ before(grammarAccess.getClassBlockAccess().getGroup()); }
-		(rule__ClassBlock__Group__0)
-		{ after(grammarAccess.getClassBlockAccess().getGroup()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 // Entry rule entryRuleClassLevelAssertion
 entryRuleClassLevelAssertion
 :
@@ -143,6 +118,31 @@ ruleClassLevelAssertion
 		{ before(grammarAccess.getClassLevelAssertionAccess().getPropertyAssertionParserRuleCall()); }
 		rulePropertyAssertion
 		{ after(grammarAccess.getClassLevelAssertionAccess().getPropertyAssertionParserRuleCall()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+// Entry rule entryRuleClassBlock
+entryRuleClassBlock
+:
+{ before(grammarAccess.getClassBlockRule()); }
+	 ruleClassBlock
+{ after(grammarAccess.getClassBlockRule()); } 
+	 EOF 
+;
+
+// Rule ClassBlock
+ruleClassBlock 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getClassBlockAccess().getGroup()); }
+		(rule__ClassBlock__Group__0)
+		{ after(grammarAccess.getClassBlockAccess().getGroup()); }
 	)
 ;
 finally {
@@ -396,6 +396,7 @@ rule__PropertyAssertion__Group__2
 	}
 :
 	rule__PropertyAssertion__Group__2__Impl
+	rule__PropertyAssertion__Group__3
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -410,6 +411,113 @@ rule__PropertyAssertion__Group__2__Impl
 	{ before(grammarAccess.getPropertyAssertionAccess().getNameAssignment_2()); }
 	(rule__PropertyAssertion__NameAssignment_2)
 	{ after(grammarAccess.getPropertyAssertionAccess().getNameAssignment_2()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__PropertyAssertion__Group__3
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__PropertyAssertion__Group__3__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__PropertyAssertion__Group__3__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getPropertyAssertionAccess().getGroup_3()); }
+	(rule__PropertyAssertion__Group_3__0)?
+	{ after(grammarAccess.getPropertyAssertionAccess().getGroup_3()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__PropertyAssertion__Group_3__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__PropertyAssertion__Group_3__0__Impl
+	rule__PropertyAssertion__Group_3__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__PropertyAssertion__Group_3__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getPropertyAssertionAccess().getLeftCurlyBracketKeyword_3_0()); }
+	'{'
+	{ after(grammarAccess.getPropertyAssertionAccess().getLeftCurlyBracketKeyword_3_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__PropertyAssertion__Group_3__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__PropertyAssertion__Group_3__1__Impl
+	rule__PropertyAssertion__Group_3__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__PropertyAssertion__Group_3__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getPropertyAssertionAccess().getAssertionsAssignment_3_1()); }
+	(rule__PropertyAssertion__AssertionsAssignment_3_1)*
+	{ after(grammarAccess.getPropertyAssertionAccess().getAssertionsAssignment_3_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__PropertyAssertion__Group_3__2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__PropertyAssertion__Group_3__2__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__PropertyAssertion__Group_3__2__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getPropertyAssertionAccess().getRightCurlyBracketKeyword_3_2()); }
+	'}'
+	{ after(grammarAccess.getPropertyAssertionAccess().getRightCurlyBracketKeyword_3_2()); }
 )
 ;
 finally {
@@ -471,6 +579,21 @@ rule__PropertyAssertion__NameAssignment_2
 		{ before(grammarAccess.getPropertyAssertionAccess().getNameSTRINGTerminalRuleCall_2_0()); }
 		RULE_STRING
 		{ after(grammarAccess.getPropertyAssertionAccess().getNameSTRINGTerminalRuleCall_2_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__PropertyAssertion__AssertionsAssignment_3_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getPropertyAssertionAccess().getAssertionsClassLevelAssertionParserRuleCall_3_1_0()); }
+		ruleClassLevelAssertion
+		{ after(grammarAccess.getPropertyAssertionAccess().getAssertionsClassLevelAssertionParserRuleCall_3_1_0()); }
 	)
 ;
 finally {

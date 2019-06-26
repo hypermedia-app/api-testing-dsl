@@ -47,6 +47,17 @@ public class ApiTestingDslGrammarAccess extends AbstractGrammarElementFinder {
 		//ClassBlock
 		public RuleCall getClassBlockParserRuleCall() { return cClassBlockParserRuleCall; }
 	}
+	public class ClassLevelAssertionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.zazuko.apitesting.dsl.ApiTestingDsl.ClassLevelAssertion");
+		private final RuleCall cPropertyAssertionParserRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//ClassLevelAssertion:
+		//	PropertyAssertion;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//PropertyAssertion
+		public RuleCall getPropertyAssertionParserRuleCall() { return cPropertyAssertionParserRuleCall; }
+	}
 	public class ClassBlockElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.zazuko.apitesting.dsl.ApiTestingDsl.ClassBlock");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -92,17 +103,6 @@ public class ApiTestingDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
-	public class ClassLevelAssertionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.zazuko.apitesting.dsl.ApiTestingDsl.ClassLevelAssertion");
-		private final RuleCall cPropertyAssertionParserRuleCall = (RuleCall)rule.eContents().get(1);
-		
-		//ClassLevelAssertion:
-		//	PropertyAssertion;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//PropertyAssertion
-		public RuleCall getPropertyAssertionParserRuleCall() { return cPropertyAssertionParserRuleCall; }
-	}
 	public class PropertyAssertionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.zazuko.apitesting.dsl.ApiTestingDsl.PropertyAssertion");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -110,12 +110,19 @@ public class ApiTestingDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPropertyKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cLeftCurlyBracketKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cAssertionsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cAssertionsClassLevelAssertionParserRuleCall_3_1_0 = (RuleCall)cAssertionsAssignment_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
 		
 		//PropertyAssertion:
-		//	'Expect' 'Property' name=STRING;
+		//	'Expect' 'Property' name=STRING ('{'
+		//	assertions+=ClassLevelAssertion*
+		//	'}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Expect' 'Property' name=STRING
+		//'Expect' 'Property' name=STRING ('{' assertions+=ClassLevelAssertion* '}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'Expect'
@@ -129,13 +136,28 @@ public class ApiTestingDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//STRING
 		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
+		
+		//('{' assertions+=ClassLevelAssertion* '}')?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3_0() { return cLeftCurlyBracketKeyword_3_0; }
+		
+		//assertions+=ClassLevelAssertion*
+		public Assignment getAssertionsAssignment_3_1() { return cAssertionsAssignment_3_1; }
+		
+		//ClassLevelAssertion
+		public RuleCall getAssertionsClassLevelAssertionParserRuleCall_3_1_0() { return cAssertionsClassLevelAssertionParserRuleCall_3_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_3_2() { return cRightCurlyBracketKeyword_3_2; }
 	}
 	
 	
 	private final ModelElements pModel;
 	private final ElementElements pElement;
-	private final ClassBlockElements pClassBlock;
 	private final ClassLevelAssertionElements pClassLevelAssertion;
+	private final ClassBlockElements pClassBlock;
 	private final PropertyAssertionElements pPropertyAssertion;
 	
 	private final Grammar grammar;
@@ -149,8 +171,8 @@ public class ApiTestingDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
 		this.pElement = new ElementElements();
-		this.pClassBlock = new ClassBlockElements();
 		this.pClassLevelAssertion = new ClassLevelAssertionElements();
+		this.pClassBlock = new ClassBlockElements();
 		this.pPropertyAssertion = new PropertyAssertionElements();
 	}
 	
@@ -201,6 +223,16 @@ public class ApiTestingDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getElementAccess().getRule();
 	}
 	
+	//ClassLevelAssertion:
+	//	PropertyAssertion;
+	public ClassLevelAssertionElements getClassLevelAssertionAccess() {
+		return pClassLevelAssertion;
+	}
+	
+	public ParserRule getClassLevelAssertionRule() {
+		return getClassLevelAssertionAccess().getRule();
+	}
+	
 	//ClassBlock:
 	//	'With' 'Class' name=STRING '{'
 	//	assertions+=ClassLevelAssertion*
@@ -213,18 +245,10 @@ public class ApiTestingDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getClassBlockAccess().getRule();
 	}
 	
-	//ClassLevelAssertion:
-	//	PropertyAssertion;
-	public ClassLevelAssertionElements getClassLevelAssertionAccess() {
-		return pClassLevelAssertion;
-	}
-	
-	public ParserRule getClassLevelAssertionRule() {
-		return getClassLevelAssertionAccess().getRule();
-	}
-	
 	//PropertyAssertion:
-	//	'Expect' 'Property' name=STRING;
+	//	'Expect' 'Property' name=STRING ('{'
+	//	assertions+=ClassLevelAssertion*
+	//	'}')?;
 	public PropertyAssertionElements getPropertyAssertionAccess() {
 		return pPropertyAssertion;
 	}

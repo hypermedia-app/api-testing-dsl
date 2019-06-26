@@ -87,18 +87,18 @@ public class ApiTestingDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ApiTestingDslPackage.CLASS_LEVEL_ASSERTION:
+      {
+        ClassLevelAssertion classLevelAssertion = (ClassLevelAssertion)theEObject;
+        T result = caseClassLevelAssertion(classLevelAssertion);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ApiTestingDslPackage.CLASS_BLOCK:
       {
         ClassBlock classBlock = (ClassBlock)theEObject;
         T result = caseClassBlock(classBlock);
         if (result == null) result = caseElement(classBlock);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ApiTestingDslPackage.CLASS_LEVEL_ASSERTION:
-      {
-        ClassLevelAssertion classLevelAssertion = (ClassLevelAssertion)theEObject;
-        T result = caseClassLevelAssertion(classLevelAssertion);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -147,22 +147,6 @@ public class ApiTestingDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Class Block</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Class Block</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseClassBlock(ClassBlock object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Class Level Assertion</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -174,6 +158,22 @@ public class ApiTestingDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseClassLevelAssertion(ClassLevelAssertion object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Class Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Class Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseClassBlock(ClassBlock object)
   {
     return null;
   }

@@ -1,0 +1,31 @@
+{
+	"steps": [
+		{
+			"type": "Class",
+			"classId": "http://schema.org/Person",
+			"children": [
+				{
+					"type": "Property",
+					"propertyId": "http://schema.org/name",
+					"children": [
+					]
+					,"value": "Tomasz"
+				},
+				{
+					"type": "Property",
+					"propertyId": "knows",
+					"children": [
+						{
+							"type": "Property",
+							"propertyId": "name",
+							"children": [
+							]
+							,"value": "Michael"
+						}
+					]
+				}
+			]
+			,"foo": "bar", "baz": {"p": "v"}
+		}
+	]
+}

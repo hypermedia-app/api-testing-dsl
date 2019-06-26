@@ -21,12 +21,12 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class ApiTestingDslSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected ApiTestingDslGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_PropertyAssertion___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q;
+	protected AbstractElementAlias match_PropertyAssertion___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_3__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (ApiTestingDslGrammarAccess) access;
-		match_PropertyAssertion___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPropertyAssertionAccess().getLeftCurlyBracketKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getPropertyAssertionAccess().getRightCurlyBracketKeyword_3_2()));
+		match_PropertyAssertion___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPropertyAssertionAccess().getLeftCurlyBracketKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getPropertyAssertionAccess().getRightCurlyBracketKeyword_3_3()));
 	}
 	
 	@Override
@@ -41,8 +41,8 @@ public class ApiTestingDslSyntacticSequencer extends AbstractSyntacticSequencer 
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_PropertyAssertion___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q.equals(syntax))
-				emit_PropertyAssertion___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_PropertyAssertion___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_3__q.equals(syntax))
+				emit_PropertyAssertion___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -54,7 +54,7 @@ public class ApiTestingDslSyntacticSequencer extends AbstractSyntacticSequencer 
 	 * This ambiguous syntax occurs at:
 	 *     name=STRING (ambiguity) (rule end)
 	 */
-	protected void emit_PropertyAssertion___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_PropertyAssertion___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

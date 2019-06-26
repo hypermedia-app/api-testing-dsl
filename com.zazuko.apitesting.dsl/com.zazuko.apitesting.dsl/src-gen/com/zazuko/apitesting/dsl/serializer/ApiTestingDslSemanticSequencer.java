@@ -52,7 +52,7 @@ public class ApiTestingDslSemanticSequencer extends AbstractDelegatingSemanticSe
 	 *     ClassBlock returns ClassBlock
 	 *
 	 * Constraint:
-	 *     (name=STRING assertions+=ClassLevelAssertion*)
+	 *     (name=STRING assertions+=ClassLevelAssertion* hatch=HATCH?)
 	 */
 	protected void sequence_ClassBlock(ISerializationContext context, ClassBlock semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -77,7 +77,7 @@ public class ApiTestingDslSemanticSequencer extends AbstractDelegatingSemanticSe
 	 *     PropertyAssertion returns PropertyAssertion
 	 *
 	 * Constraint:
-	 *     (name=STRING assertions+=ClassLevelAssertion*)
+	 *     (name=STRING assertions+=ClassLevelAssertion* hatch=HATCH?)
 	 */
 	protected void sequence_PropertyAssertion(ISerializationContext context, PropertyAssertion semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -68,15 +68,18 @@ public class ApiTestingDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cAssertionsAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cAssertionsClassLevelAssertionParserRuleCall_4_0 = (RuleCall)cAssertionsAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cHatchAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cHatchHATCHTerminalRuleCall_5_0 = (RuleCall)cHatchAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//ClassBlock:
 		//	'With' 'Class' name=STRING '{'
 		//	assertions+=ClassLevelAssertion*
+		//	hatch=HATCH?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'With' 'Class' name=STRING '{' assertions+=ClassLevelAssertion* '}'
+		//'With' 'Class' name=STRING '{' assertions+=ClassLevelAssertion* hatch=HATCH? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'With'
@@ -100,8 +103,14 @@ public class ApiTestingDslGrammarAccess extends AbstractGrammarElementFinder {
 		//ClassLevelAssertion
 		public RuleCall getAssertionsClassLevelAssertionParserRuleCall_4_0() { return cAssertionsClassLevelAssertionParserRuleCall_4_0; }
 		
+		//hatch=HATCH?
+		public Assignment getHatchAssignment_5() { return cHatchAssignment_5; }
+		
+		//HATCH
+		public RuleCall getHatchHATCHTerminalRuleCall_5_0() { return cHatchHATCHTerminalRuleCall_5_0; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 	public class PropertyAssertionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.zazuko.apitesting.dsl.ApiTestingDsl.PropertyAssertion");
@@ -114,15 +123,18 @@ public class ApiTestingDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftCurlyBracketKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cAssertionsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cAssertionsClassLevelAssertionParserRuleCall_3_1_0 = (RuleCall)cAssertionsAssignment_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
+		private final Assignment cHatchAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final RuleCall cHatchHATCHTerminalRuleCall_3_2_0 = (RuleCall)cHatchAssignment_3_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3_3 = (Keyword)cGroup_3.eContents().get(3);
 		
 		//PropertyAssertion:
 		//	'Expect' 'Property' name=STRING ('{'
 		//	assertions+=ClassLevelAssertion*
+		//	hatch=HATCH?
 		//	'}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Expect' 'Property' name=STRING ('{' assertions+=ClassLevelAssertion* '}')?
+		//'Expect' 'Property' name=STRING ('{' assertions+=ClassLevelAssertion* hatch=HATCH? '}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'Expect'
@@ -137,7 +149,7 @@ public class ApiTestingDslGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
 		
-		//('{' assertions+=ClassLevelAssertion* '}')?
+		//('{' assertions+=ClassLevelAssertion* hatch=HATCH? '}')?
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//'{'
@@ -149,8 +161,14 @@ public class ApiTestingDslGrammarAccess extends AbstractGrammarElementFinder {
 		//ClassLevelAssertion
 		public RuleCall getAssertionsClassLevelAssertionParserRuleCall_3_1_0() { return cAssertionsClassLevelAssertionParserRuleCall_3_1_0; }
 		
+		//hatch=HATCH?
+		public Assignment getHatchAssignment_3_2() { return cHatchAssignment_3_2; }
+		
+		//HATCH
+		public RuleCall getHatchHATCHTerminalRuleCall_3_2_0() { return cHatchHATCHTerminalRuleCall_3_2_0; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_3_2() { return cRightCurlyBracketKeyword_3_2; }
+		public Keyword getRightCurlyBracketKeyword_3_3() { return cRightCurlyBracketKeyword_3_3; }
 	}
 	
 	
@@ -159,6 +177,7 @@ public class ApiTestingDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final ClassLevelAssertionElements pClassLevelAssertion;
 	private final ClassBlockElements pClassBlock;
 	private final PropertyAssertionElements pPropertyAssertion;
+	private final TerminalRule tHATCH;
 	
 	private final Grammar grammar;
 	
@@ -174,6 +193,7 @@ public class ApiTestingDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pClassLevelAssertion = new ClassLevelAssertionElements();
 		this.pClassBlock = new ClassBlockElements();
 		this.pPropertyAssertion = new PropertyAssertionElements();
+		this.tHATCH = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "com.zazuko.apitesting.dsl.ApiTestingDsl.HATCH");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -236,6 +256,7 @@ public class ApiTestingDslGrammarAccess extends AbstractGrammarElementFinder {
 	//ClassBlock:
 	//	'With' 'Class' name=STRING '{'
 	//	assertions+=ClassLevelAssertion*
+	//	hatch=HATCH?
 	//	'}';
 	public ClassBlockElements getClassBlockAccess() {
 		return pClassBlock;
@@ -248,6 +269,7 @@ public class ApiTestingDslGrammarAccess extends AbstractGrammarElementFinder {
 	//PropertyAssertion:
 	//	'Expect' 'Property' name=STRING ('{'
 	//	assertions+=ClassLevelAssertion*
+	//	hatch=HATCH?
 	//	'}')?;
 	public PropertyAssertionElements getPropertyAssertionAccess() {
 		return pPropertyAssertion;
@@ -255,6 +277,12 @@ public class ApiTestingDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getPropertyAssertionRule() {
 		return getPropertyAssertionAccess().getRule();
+	}
+	
+	//terminal HATCH:
+	//	'++'->'++';
+	public TerminalRule getHATCHRule() {
+		return tHATCH;
 	}
 	
 	//terminal ID:

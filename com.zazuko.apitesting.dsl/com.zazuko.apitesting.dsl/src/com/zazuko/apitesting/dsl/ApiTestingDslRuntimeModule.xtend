@@ -3,9 +3,15 @@
  */
 package com.zazuko.apitesting.dsl
 
+import com.zazuko.apitesting.dsl.converter.ApiTestingDslValueConverterService
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 class ApiTestingDslRuntimeModule extends AbstractApiTestingDslRuntimeModule {
+
+	override bindIValueConverterService() {
+		return typeof(ApiTestingDslValueConverterService)
+	}
+
 }

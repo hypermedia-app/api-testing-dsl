@@ -99,6 +99,10 @@ public class ApiTestingDslGenerator extends AbstractGenerator {
     _builder.append("\t");
     _builder.append("]");
     _builder.newLine();
+    _builder.append("\t");
+    String _hatch = it.getHatch();
+    _builder.append(_hatch, "\t");
+    _builder.newLineIfNotEmpty();
     _builder.append("}");
     _builder.newLine();
     return _builder;
@@ -138,6 +142,10 @@ public class ApiTestingDslGenerator extends AbstractGenerator {
     _builder.append("\t");
     _builder.append("]");
     _builder.newLine();
+    _builder.append("\t");
+    String _hatch = it.getHatch();
+    _builder.append(_hatch, "\t");
+    _builder.newLineIfNotEmpty();
     _builder.append("}");
     _builder.newLine();
     return _builder;

@@ -3,13 +3,13 @@
  */
 package com.zazuko.apitesting.dsl.generator
 
+import com.zazuko.apitesting.dsl.apiTestingDsl.ClassBlock
+import com.zazuko.apitesting.dsl.apiTestingDsl.ClassLevelAssertion
+import com.zazuko.apitesting.dsl.apiTestingDsl.PropertyAssertion
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import com.zazuko.apitesting.dsl.apiTestingDsl.ClassBlock
-import com.zazuko.apitesting.dsl.apiTestingDsl.PropertyAssertion
-import com.zazuko.apitesting.dsl.apiTestingDsl.ClassLevelAssertion
 
 /**
  * Generates code from your model files on save.
@@ -49,6 +49,7 @@ class ApiTestingDslGenerator extends AbstractGenerator {
 					«assertion.child»
 				«ENDFOR»
 			]
+			«hatch»
 		}
 	'''	
 	
@@ -61,6 +62,7 @@ class ApiTestingDslGenerator extends AbstractGenerator {
 					«assertion.child»
 				«ENDFOR»
 			]
+			«hatch»
 		}
 	'''
 

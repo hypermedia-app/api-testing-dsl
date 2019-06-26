@@ -207,6 +207,17 @@ public class ApiTestingDslPackageImpl extends EPackageImpl implements ApiTesting
    * @generated
    */
   @Override
+  public EAttribute getClassBlock_Hatch()
+  {
+    return (EAttribute)classBlockEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getPropertyAssertion()
   {
     return propertyAssertionEClass;
@@ -232,6 +243,17 @@ public class ApiTestingDslPackageImpl extends EPackageImpl implements ApiTesting
   public EReference getPropertyAssertion_Assertions()
   {
     return (EReference)propertyAssertionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getPropertyAssertion_Hatch()
+  {
+    return (EAttribute)propertyAssertionEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -275,10 +297,12 @@ public class ApiTestingDslPackageImpl extends EPackageImpl implements ApiTesting
     classBlockEClass = createEClass(CLASS_BLOCK);
     createEAttribute(classBlockEClass, CLASS_BLOCK__NAME);
     createEReference(classBlockEClass, CLASS_BLOCK__ASSERTIONS);
+    createEAttribute(classBlockEClass, CLASS_BLOCK__HATCH);
 
     propertyAssertionEClass = createEClass(PROPERTY_ASSERTION);
     createEAttribute(propertyAssertionEClass, PROPERTY_ASSERTION__NAME);
     createEReference(propertyAssertionEClass, PROPERTY_ASSERTION__ASSERTIONS);
+    createEAttribute(propertyAssertionEClass, PROPERTY_ASSERTION__HATCH);
   }
 
   /**
@@ -324,10 +348,12 @@ public class ApiTestingDslPackageImpl extends EPackageImpl implements ApiTesting
     initEClass(classBlockEClass, ClassBlock.class, "ClassBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getClassBlock_Name(), ecorePackage.getEString(), "name", null, 0, 1, ClassBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getClassBlock_Assertions(), this.getClassLevelAssertion(), null, "assertions", null, 0, -1, ClassBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getClassBlock_Hatch(), ecorePackage.getEString(), "hatch", null, 0, 1, ClassBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(propertyAssertionEClass, PropertyAssertion.class, "PropertyAssertion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPropertyAssertion_Name(), ecorePackage.getEString(), "name", null, 0, 1, PropertyAssertion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPropertyAssertion_Assertions(), this.getClassLevelAssertion(), null, "assertions", null, 0, -1, PropertyAssertion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPropertyAssertion_Hatch(), ecorePackage.getEString(), "hatch", null, 0, 1, PropertyAssertion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

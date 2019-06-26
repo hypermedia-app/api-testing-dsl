@@ -211,9 +211,27 @@ ruleClassBlock returns [EObject current=null]
 				}
 			)
 		)*
-		otherlv_5='}'
+		(
+			(
+				lv_hatch_5_0=RULE_HATCH
+				{
+					newLeafNode(lv_hatch_5_0, grammarAccess.getClassBlockAccess().getHatchHATCHTerminalRuleCall_5_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getClassBlockRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"hatch",
+						lv_hatch_5_0,
+						"com.zazuko.apitesting.dsl.ApiTestingDsl.HATCH");
+				}
+			)
+		)?
+		otherlv_6='}'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getClassBlockAccess().getRightCurlyBracketKeyword_5());
+			newLeafNode(otherlv_6, grammarAccess.getClassBlockAccess().getRightCurlyBracketKeyword_6());
 		}
 	)
 ;
@@ -284,13 +302,33 @@ rulePropertyAssertion returns [EObject current=null]
 					}
 				)
 			)*
-			otherlv_5='}'
+			(
+				(
+					lv_hatch_5_0=RULE_HATCH
+					{
+						newLeafNode(lv_hatch_5_0, grammarAccess.getPropertyAssertionAccess().getHatchHATCHTerminalRuleCall_3_2_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getPropertyAssertionRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"hatch",
+							lv_hatch_5_0,
+							"com.zazuko.apitesting.dsl.ApiTestingDsl.HATCH");
+					}
+				)
+			)?
+			otherlv_6='}'
 			{
-				newLeafNode(otherlv_5, grammarAccess.getPropertyAssertionAccess().getRightCurlyBracketKeyword_3_2());
+				newLeafNode(otherlv_6, grammarAccess.getPropertyAssertionAccess().getRightCurlyBracketKeyword_3_3());
 			}
 		)?
 	)
 ;
+
+RULE_HATCH : '++' ( options {greedy=false;} : . )*'++';
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

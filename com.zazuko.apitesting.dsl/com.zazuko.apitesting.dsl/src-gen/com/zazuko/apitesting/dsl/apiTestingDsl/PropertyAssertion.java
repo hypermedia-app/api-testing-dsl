@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link com.zazuko.apitesting.dsl.apiTestingDsl.PropertyAssertion#getName <em>Name</em>}</li>
  *   <li>{@link com.zazuko.apitesting.dsl.apiTestingDsl.PropertyAssertion#getAssertions <em>Assertions</em>}</li>
+ *   <li>{@link com.zazuko.apitesting.dsl.apiTestingDsl.PropertyAssertion#getHatch <em>Hatch</em>}</li>
  * </ul>
  *
  * @see com.zazuko.apitesting.dsl.apiTestingDsl.ApiTestingDslPackage#getPropertyAssertion()
@@ -57,5 +58,27 @@ public interface PropertyAssertion extends ClassLevelAssertion
    * @generated
    */
   EList<ClassLevelAssertion> getAssertions();
+
+  /**
+   * Returns the value of the '<em><b>Hatch</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Hatch</em>' attribute.
+   * @see #setHatch(String)
+   * @see com.zazuko.apitesting.dsl.apiTestingDsl.ApiTestingDslPackage#getPropertyAssertion_Hatch()
+   * @model
+   * @generated
+   */
+  String getHatch();
+
+  /**
+   * Sets the value of the '{@link com.zazuko.apitesting.dsl.apiTestingDsl.PropertyAssertion#getHatch <em>Hatch</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Hatch</em>' attribute.
+   * @see #getHatch()
+   * @generated
+   */
+  void setHatch(String value);
 
 } // PropertyAssertion

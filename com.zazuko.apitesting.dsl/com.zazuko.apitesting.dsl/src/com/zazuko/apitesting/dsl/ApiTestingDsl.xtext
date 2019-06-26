@@ -14,6 +14,7 @@ ClassLevelAssertion:
 ClassBlock:
 	'With' 'Class' name=STRING '{'
 		(assertions+=ClassLevelAssertion)*
+		hatch=HATCH?
 	'}';
 
 PropertyAssertion:
@@ -21,6 +22,9 @@ PropertyAssertion:
 	(
 		'{'
 			(assertions+=ClassLevelAssertion)*
+			hatch=HATCH?
 		'}'
 	)?
 ;
+
+terminal HATCH: '++' -> '++';

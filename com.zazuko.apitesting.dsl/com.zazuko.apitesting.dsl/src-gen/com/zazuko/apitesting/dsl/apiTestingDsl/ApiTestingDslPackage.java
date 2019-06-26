@@ -152,13 +152,22 @@ public interface ApiTestingDslPackage extends EPackage
   int CLASS_BLOCK__ASSERTIONS = ELEMENT_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Hatch</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_BLOCK__HATCH = ELEMENT_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>Class Block</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLASS_BLOCK_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 2;
+  int CLASS_BLOCK_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link com.zazuko.apitesting.dsl.apiTestingDsl.impl.PropertyAssertionImpl <em>Property Assertion</em>}' class.
@@ -189,13 +198,22 @@ public interface ApiTestingDslPackage extends EPackage
   int PROPERTY_ASSERTION__ASSERTIONS = CLASS_LEVEL_ASSERTION_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Hatch</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROPERTY_ASSERTION__HATCH = CLASS_LEVEL_ASSERTION_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>Property Assertion</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROPERTY_ASSERTION_FEATURE_COUNT = CLASS_LEVEL_ASSERTION_FEATURE_COUNT + 2;
+  int PROPERTY_ASSERTION_FEATURE_COUNT = CLASS_LEVEL_ASSERTION_FEATURE_COUNT + 3;
 
 
   /**
@@ -272,6 +290,17 @@ public interface ApiTestingDslPackage extends EPackage
   EReference getClassBlock_Assertions();
 
   /**
+   * Returns the meta object for the attribute '{@link com.zazuko.apitesting.dsl.apiTestingDsl.ClassBlock#getHatch <em>Hatch</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Hatch</em>'.
+   * @see com.zazuko.apitesting.dsl.apiTestingDsl.ClassBlock#getHatch()
+   * @see #getClassBlock()
+   * @generated
+   */
+  EAttribute getClassBlock_Hatch();
+
+  /**
    * Returns the meta object for class '{@link com.zazuko.apitesting.dsl.apiTestingDsl.PropertyAssertion <em>Property Assertion</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -302,6 +331,17 @@ public interface ApiTestingDslPackage extends EPackage
    * @generated
    */
   EReference getPropertyAssertion_Assertions();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.zazuko.apitesting.dsl.apiTestingDsl.PropertyAssertion#getHatch <em>Hatch</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Hatch</em>'.
+   * @see com.zazuko.apitesting.dsl.apiTestingDsl.PropertyAssertion#getHatch()
+   * @see #getPropertyAssertion()
+   * @generated
+   */
+  EAttribute getPropertyAssertion_Hatch();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -391,6 +431,14 @@ public interface ApiTestingDslPackage extends EPackage
     EReference CLASS_BLOCK__ASSERTIONS = eINSTANCE.getClassBlock_Assertions();
 
     /**
+     * The meta object literal for the '<em><b>Hatch</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CLASS_BLOCK__HATCH = eINSTANCE.getClassBlock_Hatch();
+
+    /**
      * The meta object literal for the '{@link com.zazuko.apitesting.dsl.apiTestingDsl.impl.PropertyAssertionImpl <em>Property Assertion</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -415,6 +463,14 @@ public interface ApiTestingDslPackage extends EPackage
      * @generated
      */
     EReference PROPERTY_ASSERTION__ASSERTIONS = eINSTANCE.getPropertyAssertion_Assertions();
+
+    /**
+     * The meta object literal for the '<em><b>Hatch</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROPERTY_ASSERTION__HATCH = eINSTANCE.getPropertyAssertion_Hatch();
 
   }
 

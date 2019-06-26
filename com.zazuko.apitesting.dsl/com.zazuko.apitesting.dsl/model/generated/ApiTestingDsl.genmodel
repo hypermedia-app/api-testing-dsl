@@ -14,10 +14,12 @@
     <genClasses ecoreClass="ApiTestingDsl.ecore#//ClassBlock">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ApiTestingDsl.ecore#//ClassBlock/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ApiTestingDsl.ecore#//ClassBlock/assertions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ApiTestingDsl.ecore#//ClassBlock/hatch"/>
     </genClasses>
     <genClasses ecoreClass="ApiTestingDsl.ecore#//PropertyAssertion">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ApiTestingDsl.ecore#//PropertyAssertion/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ApiTestingDsl.ecore#//PropertyAssertion/assertions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ApiTestingDsl.ecore#//PropertyAssertion/hatch"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

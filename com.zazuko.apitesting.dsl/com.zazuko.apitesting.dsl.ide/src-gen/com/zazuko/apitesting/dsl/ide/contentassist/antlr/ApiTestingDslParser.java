@@ -37,8 +37,10 @@ public class ApiTestingDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getModelAccess().getElementsAssignment(), "rule__Model__ElementsAssignment");
 			builder.put(grammarAccess.getClassBlockAccess().getNameAssignment_2(), "rule__ClassBlock__NameAssignment_2");
 			builder.put(grammarAccess.getClassBlockAccess().getAssertionsAssignment_4(), "rule__ClassBlock__AssertionsAssignment_4");
+			builder.put(grammarAccess.getClassBlockAccess().getHatchAssignment_5(), "rule__ClassBlock__HatchAssignment_5");
 			builder.put(grammarAccess.getPropertyAssertionAccess().getNameAssignment_2(), "rule__PropertyAssertion__NameAssignment_2");
 			builder.put(grammarAccess.getPropertyAssertionAccess().getAssertionsAssignment_3_1(), "rule__PropertyAssertion__AssertionsAssignment_3_1");
+			builder.put(grammarAccess.getPropertyAssertionAccess().getHatchAssignment_3_2(), "rule__PropertyAssertion__HatchAssignment_3_2");
 		}
 	}
 	

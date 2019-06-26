@@ -32,6 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link com.zazuko.apitesting.dsl.apiTestingDsl.impl.PropertyAssertionImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.zazuko.apitesting.dsl.apiTestingDsl.impl.PropertyAssertionImpl#getAssertions <em>Assertions</em>}</li>
+ *   <li>{@link com.zazuko.apitesting.dsl.apiTestingDsl.impl.PropertyAssertionImpl#getHatch <em>Hatch</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,6 +68,26 @@ public class PropertyAssertionImpl extends ClassLevelAssertionImpl implements Pr
    * @ordered
    */
   protected EList<ClassLevelAssertion> assertions;
+
+  /**
+   * The default value of the '{@link #getHatch() <em>Hatch</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getHatch()
+   * @generated
+   * @ordered
+   */
+  protected static final String HATCH_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getHatch() <em>Hatch</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getHatch()
+   * @generated
+   * @ordered
+   */
+  protected String hatch = HATCH_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -135,6 +156,31 @@ public class PropertyAssertionImpl extends ClassLevelAssertionImpl implements Pr
    * @generated
    */
   @Override
+  public String getHatch()
+  {
+    return hatch;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setHatch(String newHatch)
+  {
+    String oldHatch = hatch;
+    hatch = newHatch;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ApiTestingDslPackage.PROPERTY_ASSERTION__HATCH, oldHatch, hatch));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -159,6 +205,8 @@ public class PropertyAssertionImpl extends ClassLevelAssertionImpl implements Pr
         return getName();
       case ApiTestingDslPackage.PROPERTY_ASSERTION__ASSERTIONS:
         return getAssertions();
+      case ApiTestingDslPackage.PROPERTY_ASSERTION__HATCH:
+        return getHatch();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -181,6 +229,9 @@ public class PropertyAssertionImpl extends ClassLevelAssertionImpl implements Pr
         getAssertions().clear();
         getAssertions().addAll((Collection<? extends ClassLevelAssertion>)newValue);
         return;
+      case ApiTestingDslPackage.PROPERTY_ASSERTION__HATCH:
+        setHatch((String)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -201,6 +252,9 @@ public class PropertyAssertionImpl extends ClassLevelAssertionImpl implements Pr
       case ApiTestingDslPackage.PROPERTY_ASSERTION__ASSERTIONS:
         getAssertions().clear();
         return;
+      case ApiTestingDslPackage.PROPERTY_ASSERTION__HATCH:
+        setHatch(HATCH_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -219,6 +273,8 @@ public class PropertyAssertionImpl extends ClassLevelAssertionImpl implements Pr
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case ApiTestingDslPackage.PROPERTY_ASSERTION__ASSERTIONS:
         return assertions != null && !assertions.isEmpty();
+      case ApiTestingDslPackage.PROPERTY_ASSERTION__HATCH:
+        return HATCH_EDEFAULT == null ? hatch != null : !HATCH_EDEFAULT.equals(hatch);
     }
     return super.eIsSet(featureID);
   }
@@ -236,6 +292,8 @@ public class PropertyAssertionImpl extends ClassLevelAssertionImpl implements Pr
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", hatch: ");
+    result.append(hatch);
     result.append(')');
     return result.toString();
   }

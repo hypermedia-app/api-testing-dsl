@@ -20,7 +20,7 @@ Hypermedia-style API testing DSL
   * Select *Import existing Eclipse Projects* and verify that the `Working Tree` top-node is selected, *Next*
   * Verify that all projects are selected, *Finish*
 
-The projects should now be imported. There might be build path and the build finish without errors.
+The projects should now be imported and the build finish without errors.
 
 ## Using git from inside Eclipse
 
